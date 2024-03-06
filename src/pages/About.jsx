@@ -78,6 +78,11 @@ const About = () => {
                 backend expertise in Node.js and MongoDB. Let&rsquo;s build
                 something amazing together.
               </p>
+              <div className="tags flex flex-wrap gap-2 w-[100%] py-6 justify-center">
+                {["React", "Node.js", "Express", 'MongoDB', 'Mongoose', 'TailwindCSS', 'HTML/CSS/JS'].map((tag, index) => (
+                  <Link className="text-blue-700 text-sm hover:opacity-80" to={`#${tag}`} key={index}>#{tag}</Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
