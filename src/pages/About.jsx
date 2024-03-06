@@ -48,7 +48,9 @@ const About = () => {
             </div>
           </div>
           <div className="hello flex flex-col gap-6 py-10 px-6 w-[100%] md:w-[60%] items-center md:items-start">
-            <h1 className="md:text-8xl text-4xl sm:text-6xl font-bold font-madimi_one">Hello</h1>
+            <h1 className="md:text-8xl text-4xl sm:text-6xl font-bold font-madimi_one">
+              Hello
+            </h1>
             <h3 className="md:text-2xl text-xl  font-[600]">
               Here&rsquo;s who I am & what I do
             </h3>
@@ -57,10 +59,14 @@ const About = () => {
                 className="bg-blue-700 text-white py-2 rounded-xl px-4 hover:bg-white hover:text-blue-700 border border-blue-700"
                 to={""}
               >
-                <FontAwesomeIcon className="mr-1 text-sm" icon={faFile} /> Resume
+                <FontAwesomeIcon className="mr-1 text-sm" icon={faFile} />{" "}
+                Resume
               </Link>
               <Link className="bg-blue-700 text-white p-2 text-sm md:text-[16px] rounded-xl px-4 hover:bg-white hover:text-blue-700 border border-blue-700">
-                <FontAwesomeIcon className="mr-1 text-sm" icon={faDiagramProject} />{" "}
+                <FontAwesomeIcon
+                  className="mr-1 text-sm"
+                  icon={faDiagramProject}
+                />{" "}
                 Projects
               </Link>
             </div>
@@ -76,11 +82,14 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="about-footer md:p-12 p-8">
-        <div className="content text-sm flex justify-center md:justify-end md:gap-16 gap-8">
+      <div className="about-footer md:p-12 p-8 sm:bg-white bg-[#f4ece6]">
+        <div className="content text-sm flex sm:flex-row flex-col justify-center md:justify-end md:gap-16 gap-8">
           <div className="call flex flex-col items-center gap-2">
             <h2 className="md:font-[700] font-[500] font-madimi_one">Call</h2>
-            <Link className="font-[400] md:text-sm text-[12px]" toi={`tel:${507713746}`}>
+            <Link
+              className="font-[400] md:text-sm text-[12px]"
+              toi={`tel:${507713746}`}
+            >
               +966507713746
             </Link>
           </div>
@@ -95,7 +104,9 @@ const About = () => {
             </Link>
           </div>
           <div className="follow flex flex-col items-center gap-2">
-            <h2 className="md:font-[700] font-[500] text-sm font-madimi_one">Follow Me</h2>
+            <h2 className="md:font-[700] font-[500] text-sm font-madimi_one">
+              Follow Me
+            </h2>
             <ul className="flex gap-4">
               <li>
                 <Link to={""}>
