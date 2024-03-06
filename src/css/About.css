@@ -1,0 +1,11 @@
+div.about-me{
+  background-image: url('../assets/wickedbackground_uhd.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  display: flex;
+  justify-content: center;
+}
+div.about-me div.about-card{
+  transform: rotate(180deg);
+}
