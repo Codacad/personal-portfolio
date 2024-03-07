@@ -32,16 +32,16 @@ const About = () => {
             </div>
             <div className="footer rounded-b-md absolute  bottom-0 w-[100%] bg-white p-2 flex justify-center">
               <div className="social-medias w-[50%] flex justify-around md:gap-8">
-                <Link className="md:text-2xl" to={""}>
+                <Link className="md:text-2xl hover:opacity-80" to={"https://www.linkedin.com/in/codacad/"} target="_blank">
                   <FontAwesomeIcon icon={faLinkedin} />
                 </Link>
-                <Link className="md:text-2xl" to={""}>
+                <Link className="md:text-2xl hover:opacity-80" to={"https://twitter.com/codacad"} target="_blank">
                   <FontAwesomeIcon icon={faTwitter} />
                 </Link>
-                <Link className="md:text-2xl" to={""}>
+                <Link className="md:text-2xl hover:opacity-80" to={"https://www.facebook.com/rizcodi/"} target="_blank">
                   <FontAwesomeIcon icon={faFacebook} />
                 </Link>
-                <Link className="md:text-2xl" to={""}>
+                <Link className="md:text-2xl hover:opacity-80" to={""}>
                   <FontAwesomeIcon icon={faInstagram} />
                 </Link>
               </div>
@@ -114,22 +114,22 @@ const About = () => {
             </h2>
             <ul className="flex gap-4">
               <li>
-                <Link to={""}>
+                <Link to={"https://www.linkedin.com/in/codacad/"} target="_blank" className="hover:opacity-80">
                   <FontAwesomeIcon icon={faLinkedin} />
                 </Link>
               </li>
               <li>
-                <Link to={""}>
+                <Link to={"https://www.facebook.com/rizcodi"} target="_blank" className="hover:opacity-80">
                   <FontAwesomeIcon icon={faFacebook} />
                 </Link>
               </li>
               <li>
-                <Link to={""}>
+                <Link to={"https://twitter.com/codacad"} target="_blank" className="hover:opacity-80">
                   <FontAwesomeIcon icon={faTwitter} />
                 </Link>
               </li>
               <li>
-                <Link to={""}>
+                <Link to={""} className="hover:opacity-80">
                   <FontAwesomeIcon icon={faInstagram} />
                 </Link>
               </li>
