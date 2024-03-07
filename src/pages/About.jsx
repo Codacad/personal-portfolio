@@ -25,7 +25,7 @@ const About = () => {
               <div className="name text-center font-poppins font-black text-2xl tracking-wide">
                 Mohd Rizwan
               </div>
-              <span className="divider w-16 p-[1px] poppins-black bg-blue-700"></span>
+              <span className="divider w-12 p-[1px] poppins-black bg-blue-700"></span>
               <p className="job uppercase font-thin tracking-widest">
                 Web Developer
               </p>
