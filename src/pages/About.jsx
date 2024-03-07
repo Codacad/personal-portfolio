@@ -4,9 +4,9 @@ import "../css/About.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
-  faTwitter,
+  faGithub,
   faFacebook,
-  faInstagram,
+  faDev
 } from "@fortawesome/free-brands-svg-icons";
 import { faFile } from "@fortawesome/free-regular-svg-icons";
 import { faDiagramProject } from "@fortawesome/free-solid-svg-icons";
@@ -35,14 +35,14 @@ const About = () => {
                 <Link className="md:text-2xl hover:opacity-80" to={"https://www.linkedin.com/in/codacad/"} target="_blank">
                   <FontAwesomeIcon icon={faLinkedin} />
                 </Link>
-                <Link className="md:text-2xl hover:opacity-80" to={"https://twitter.com/codacad"} target="_blank">
-                  <FontAwesomeIcon icon={faTwitter} />
+                <Link className="md:text-2xl hover:opacity-80" to={"https://github.com/Codacad"} target="_blank">
+                  <FontAwesomeIcon icon={faGithub} />
+                </Link>
+                <Link className="md:text-2xl hover:opacity-80" to={"https://www.frontendmentor.io/profile/Codacad"} target="_blank">
+                  <FontAwesomeIcon icon={faDev} />
                 </Link>
                 <Link className="md:text-2xl hover:opacity-80" to={"https://www.facebook.com/rizcodi/"} target="_blank">
                   <FontAwesomeIcon icon={faFacebook} />
-                </Link>
-                <Link className="md:text-2xl hover:opacity-80" to={""}>
-                  <FontAwesomeIcon icon={faInstagram} />
                 </Link>
               </div>
             </div>
@@ -119,18 +119,18 @@ const About = () => {
                 </Link>
               </li>
               <li>
+                <Link to={"https://github.com/Codacad"} target="_blank" className="hover:opacity-80">
+                  <FontAwesomeIcon icon={faGithub} />
+                </Link>
+              </li>
+              <li>
+                <Link to={"https://www.frontendmentor.io/profile/Codacad"} target="_blank" className="hover:opacity-80">
+                  <FontAwesomeIcon icon={faDev} />
+                </Link>
+              </li>
+              <li>
                 <Link to={"https://www.facebook.com/rizcodi"} target="_blank" className="hover:opacity-80">
                   <FontAwesomeIcon icon={faFacebook} />
-                </Link>
-              </li>
-              <li>
-                <Link to={"https://twitter.com/codacad"} target="_blank" className="hover:opacity-80">
-                  <FontAwesomeIcon icon={faTwitter} />
-                </Link>
-              </li>
-              <li>
-                <Link to={""} className="hover:opacity-80">
-                  <FontAwesomeIcon icon={faInstagram} />
                 </Link>
               </li>
             </ul>

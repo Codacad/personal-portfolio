@@ -14,23 +14,46 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
+  cursor: pointer;
 }
 
 span.bar{
   background-color: #1d4ed8;
   padding: 1.5px;
   border-radius: 2px;
+  position: relative;
 }
 
 .bar-one{
+  position: relative;
   width: 50%;
   margin-right: auto;
 }
 .bar-two{
   width: 100%;
+  position: relative;
 }
 .bar-three{
   width: 50%;
   margin-left: auto;
+  position: relative;
+}
+
+.transform-bar-one{
+  transform: rotate(45deg);
+  width: 50%;
+  left: 3px;
+  top: 2px;
+ }
+.transform-bar-two{
+  transform: rotate(-45deg);
+}
+.transform-bar-three{
+  transform: rotate(45deg);
+  width: 50%;
+  left: -1px;
+  top: -2.5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }

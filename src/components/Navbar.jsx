@@ -1,6 +1,24 @@
 import { Link, NavLink } from "react-router-dom";
 import '../css/Navbar.css'
+import { useState } from "react";
 const Navbar = () => {
+  let [barOne, setBarOne] = useState("bar bar-one")
+  let [barTwo, setBarTwo] = useState("bar bar-two")
+  let [barThree, setBarThree] = useState("bar bar-three")
+  let [toggle, setToggle] = useState(false)
+  const handleTogglerChange = () => {
+    setToggle(!toggle)
+
+    if(toggle){
+      setBarOne("bar bar-one transform-bar-one")
+      setBarTwo("bar bar-two transform-bar-two")
+      setBarThree("bar bar-three transform-bar-three")
+    } else {
+      setBarOne("bar bar-one")
+      setBarTwo("bar bar-two")
+      setBarThree("bar bar-three")
+    }
+  }
   return (
     <>
       <nav className="flex md:p-12 py-8 px-4 items-center justify-between backdrop-blur-sm">
@@ -12,10 +30,10 @@ const Navbar = () => {
           </span>
         </div>
         <div className="menu-toggler max-md:flex hidden">
-          <div className="bars">
-            <span className="bar bar-one"></span>
-            <span className="bar bar-two"></span>
-            <span className="bar bar-three"></span>
+          <div className="bars" onClick={() => handleTogglerChange()}>
+            <span className={`${barOne}`}></span>
+            <span className={`${barTwo}`}></span>
+            <span className={`${barThree}`}></span>
           </div>
         </div>
         <ul className="md:flex hidden justify-end gap-x-4 uppercase font-anta font-thin">
