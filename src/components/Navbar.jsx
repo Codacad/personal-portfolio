@@ -1,14 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import '../css/Navbar.css'
 import { useState } from "react";
-const Navbar = () => {
+const Navbar = ({toggle, setToggle}) => {
   let [barOne, setBarOne] = useState("bar bar-one")
   let [barTwo, setBarTwo] = useState("bar bar-two")
   let [barThree, setBarThree] = useState("bar bar-three")
-  let [toggle, setToggle] = useState(false)
   const handleTogglerChange = () => {
     setToggle(!toggle)
-
     if(toggle){
       setBarOne("bar bar-one transform-bar-one")
       setBarTwo("bar bar-two transform-bar-two")
