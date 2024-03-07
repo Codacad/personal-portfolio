@@ -29,15 +29,18 @@ span.bar{
   position: relative;
   width: 50%;
   margin-right: auto;
+  transition: all 200ms ease-in-out;
 }
 .bar-two{
   width: 100%;
   position: relative;
+  transition: all 200ms ease-in-out;
 }
 .bar-three{
   width: 50%;
   margin-left: auto;
   position: relative;
+  transition: all 200ms ease-in-out;
 }
 
 .transform-bar-one{
@@ -45,9 +48,11 @@ span.bar{
   width: 50%;
   left: 3px;
   top: 2px;
+  transition: all 300ms ease-in-out;
  }
 .transform-bar-two{
   transform: rotate(-45deg);
+  transition: all 200ms ease-in-out;
 }
 .transform-bar-three{
   transform: rotate(45deg);
@@ -56,4 +61,5 @@ span.bar{
   top: -2.5px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  transition: all 200ms ease-in-out;
 }
