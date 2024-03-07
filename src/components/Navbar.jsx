@@ -1,7 +1,5 @@
-import React from "react";
-import Logo from "../assets/logo_1.svg";
 import { Link, NavLink } from "react-router-dom";
-
+import '../css/Navbar.css'
 const Navbar = () => {
   return (
     <>
@@ -12,6 +10,13 @@ const Navbar = () => {
           <span className="uppercase max-sm:text-sm font-thin font-anta border-l-2 max-sm:border-l-1 ml-4 max-sm:ml-2 pl-4 max-sm:pl-2">
             Fullstack Developer
           </span>
+        </div>
+        <div className="menu-toggler max-md:flex hidden">
+          <div className="bars">
+            <span className="bar bar-one"></span>
+            <span className="bar bar-two"></span>
+            <span className="bar bar-three"></span>
+          </div>
         </div>
         <ul className="md:flex hidden justify-end gap-x-4 uppercase font-anta font-thin">
           <li>

@@ -1,0 +1,36 @@
+.menu-toggler{
+  width: 30px;
+  height: 40px;
+  position: relative;
+}
+
+.menu-toggler .bars{
+  width: 100%;
+  height: 100%;
+}
+
+.menu-toggler .bars{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+span.bar{
+  background-color: #1d4ed8;
+  padding: 1.5px;
+  border-radius: 2px;
+}
+
+.bar-one{
+  width: 50%;
+  margin-right: auto;
+}
+.bar-two{
+  width: 100%;
+}
+.bar-three{
+  width: 50%;
+  margin-left: auto;
+}
