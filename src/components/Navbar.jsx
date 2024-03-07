@@ -8,8 +8,8 @@ const Navbar = () => {
       <nav className="flex md:p-12 py-8 px-4 items-center justify-between backdrop-blur-sm">
         <div className="brand flex items-center"> 
           {/* <img src={Logo} alt="" /> */}
-          <h1 className="md:text-2xl font-madimi_one font-black flex items-center uppercase"> <span className="w-4 md:mt-[2px] h-4 mr-2 block bg-blue-700"></span> Mohd Rizwan</h1>
-          <span className="uppercase font-thin font-anta border-l-2 ml-4 pl-4">
+          <h1 className="md:text-2xl max-sm:text-sm font-madimi_one font-black flex items-center uppercase"> <span className="w-4 md:mt-[2px] h-4 mr-2 block bg-blue-700"></span> Mohd Rizwan</h1>
+          <span className="uppercase max-sm:text-sm font-thin font-anta border-l-2 ml-4 pl-4">
             Fullstack Developer
           </span>
         </div>
