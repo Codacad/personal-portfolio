@@ -1,28 +1,37 @@
 import { Link, NavLink } from "react-router-dom";
-import '../css/Navbar.css'
-import { useState } from "react";
-const Navbar = ({toggle, setToggle}) => {
-  let [barOne, setBarOne] = useState("bar bar-one")
-  let [barTwo, setBarTwo] = useState("bar bar-two")
-  let [barThree, setBarThree] = useState("bar bar-three")
+import "../css/Navbar.css";
+import { useState, useContext } from "react";
+import MoblieMenuContext from "../context/MobileMenuContext";
+const Navbar = () => {
+  let { toggler, setToggler, mobileMenuHandler } =
+    useContext(MoblieMenuContext);
+  let [barOne, setBarOne] = useState("bar bar-one");
+  let [barTwo, setBarTwo] = useState("bar bar-two");
+  let [barThree, setBarThree] = useState("bar bar-three");
+
   const handleTogglerChange = () => {
-    setToggle(!toggle)
-    if(toggle){
-      setBarOne("bar bar-one transform-bar-one")
-      setBarTwo("bar bar-two transform-bar-two")
-      setBarThree("bar bar-three transform-bar-three")
+    setToggler(!toggler);
+    mobileMenuHandler()
+     if (!toggler) {
+      setBarOne("bar bar-one transform-bar-one");
+      setBarTwo("bar bar-two transform-bar-two");
+      setBarThree("bar bar-three transform-bar-three");
     } else {
-      setBarOne("bar bar-one")
-      setBarTwo("bar bar-two")
-      setBarThree("bar bar-three")
+      setBarOne("bar bar-one");
+      setBarTwo("bar bar-two");
+      setBarThree("bar bar-three");
     }
-  }
+  };
   return (
     <>
       <nav className="flex md:p-12 py-8 px-4 items-center justify-between backdrop-blur-sm">
-        <div className="brand flex items-center"> 
+        <div className="brand flex items-center">
           {/* <img src={Logo} alt="" /> */}
-          <h1 className="md:text-2xl max-sm:text-sm font-madimi_one font-black flex items-center uppercase"> <span className="w-4 md:mt-[2px] max-sm:w-3 max-sm:h-3 h-4 mr-2 max-sm:mr-[.30rem] block bg-blue-700"></span>Mohd Rizwan</h1>
+          <h1 className="md:text-2xl max-sm:text-sm font-madimi_one font-black flex items-center uppercase">
+            {" "}
+            <span className="w-4 md:mt-[2px] max-sm:w-3 max-sm:h-3 h-4 mr-2 max-sm:mr-[.30rem] block bg-blue-700"></span>
+            Mohd Rizwan
+          </h1>
           <span className="uppercase max-sm:text-sm font-thin font-anta border-l-2 max-sm:border-l-1 ml-4 max-sm:ml-2 pl-4 max-sm:pl-2">
             Fullstack Developer
           </span>
