@@ -3,11 +3,11 @@ import { NavLink } from "react-router-dom";
 import "../css/MobileMenu.css";
 import MoblieMenuContext from "../context/MobileMenuContext";
 const MobileMenus = () => {
-  const { setIsOpen, mobileMenuClasses } = useContext(MoblieMenuContext);
+  const { setIsOpen, openCloseHandler, mobileMenuClasses } = useContext(MoblieMenuContext);
   return (
     <div className={mobileMenuClasses}>
-      <ul className="relative -z-1 p-8 flex flex-col gap-6 justify-center items-center font-bold text-xl">
-        <li>
+      <ul className="relative p-8 flex flex-col gap-6 justify-center items-center font-bold text-xl">
+        <li onClick={() => openCloseHandler()}>
           <NavLink
             to="/"
             className={({ isActive }) => `${isActive ? "text-blue-600" : ""}`}
@@ -15,7 +15,7 @@ const MobileMenus = () => {
             About Me
           </NavLink>
         </li>
-        <li>
+        <li onClick={() => openCloseHandler()}>
           <NavLink
             to="/resume"
             className={({ isActive }) => `${isActive ? "text-blue-600" : ""}`}
@@ -23,7 +23,7 @@ const MobileMenus = () => {
             Resume
           </NavLink>
         </li>
-        <li>
+        <li onClick={() => openCloseHandler()}>
           <NavLink
             to="/projects"
             className={({ isActive }) => `${isActive ? "text-blue-600" : ""}`}
@@ -31,7 +31,7 @@ const MobileMenus = () => {
             Projects
           </NavLink>
         </li>
-        <li>
+        <li onClick={() => openCloseHandler()}>
           <NavLink
             to="/contact"
             className={({ isActive }) => `${isActive ? "text-blue-600" : ""}`}

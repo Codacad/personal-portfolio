@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import MoblieMenuContext from "./MobileMenuContext";
 const MoblieMenuContextProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -6,6 +6,23 @@ const MoblieMenuContextProvider = ({ children }) => {
   const [mobileMenuClasses, setMobileMenuClasses] = useState(
     "mobile-menus max-md:block hidden"
   );
+  let [barOne, setBarOne] = useState("bar bar-one");
+  let [barTwo, setBarTwo] = useState("bar bar-two");
+  let [barThree, setBarThree] = useState("bar bar-three");
+
+  const handleTogglerChange = () => {
+    setToggler(!toggler);
+    mobileMenuHandler();
+    if (!toggler) {
+      setBarOne("bar bar-one transform-bar-one");
+      setBarTwo("bar bar-two transform-bar-two");
+      setBarThree("bar bar-three transform-bar-three");
+    } else {
+      setBarOne("bar bar-one");
+      setBarTwo("bar bar-two");
+      setBarThree("bar bar-three");
+    }
+  };
   const mobileMenuHandler = () => {
     setIsOpen(!isOpen);
     if (!isOpen) {
@@ -15,6 +32,10 @@ const MoblieMenuContextProvider = ({ children }) => {
     } else {
       setMobileMenuClasses("mobile-menus max-md:block hidden");
     }
+  };
+  const openCloseHandler = () => {
+    mobileMenuHandler();
+    handleTogglerChange();
   };
   return (
     <div>
@@ -27,6 +48,11 @@ const MoblieMenuContextProvider = ({ children }) => {
           mobileMenuClasses,
           setMobileMenuClasses,
           mobileMenuHandler,
+          barOne,
+          barTwo,
+          barThree,
+          handleTogglerChange,
+          openCloseHandler,
         }}
       >
         {children}

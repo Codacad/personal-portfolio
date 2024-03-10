@@ -3,28 +3,15 @@ import "../css/Navbar.css";
 import { useState, useContext } from "react";
 import MoblieMenuContext from "../context/MobileMenuContext";
 const Navbar = () => {
-  let { toggler, setToggler, mobileMenuHandler } =
-    useContext(MoblieMenuContext);
-  let [barOne, setBarOne] = useState("bar bar-one");
-  let [barTwo, setBarTwo] = useState("bar bar-two");
-  let [barThree, setBarThree] = useState("bar bar-three");
-
-  const handleTogglerChange = () => {
-    setToggler(!toggler);
-    mobileMenuHandler()
-     if (!toggler) {
-      setBarOne("bar bar-one transform-bar-one");
-      setBarTwo("bar bar-two transform-bar-two");
-      setBarThree("bar bar-three transform-bar-three");
-    } else {
-      setBarOne("bar bar-one");
-      setBarTwo("bar bar-two");
-      setBarThree("bar bar-three");
-    }
-  };
+  let {
+    barOne,
+    barTwo,
+    barThree,
+    handleTogglerChange,
+  } = useContext(MoblieMenuContext);
   return (
     <>
-      <nav className="flex md:p-12 py-8 px-4 items-center justify-between backdrop-blur-sm">
+      <nav className="flex z-10 md:p-12 py-8 px-4 items-center justify-between backdrop-blur-sm">
         <div className="brand flex items-center">
           {/* <img src={Logo} alt="" /> */}
           <h1 className="md:text-2xl max-sm:text-sm font-madimi_one font-black flex items-center uppercase">

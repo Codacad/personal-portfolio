@@ -13,8 +13,8 @@ import { faDiagramProject } from "@fortawesome/free-solid-svg-icons";
 const About = () => {
   return (
     <>
-      <div className="about-me md:p-12 relative w-[100%]">
-        <div className="about-card block w-[100%] md:w-[50%] md:flex">
+      <div className="about-me backdrop-blur-3xl md:p-12 relative w-[100%]">
+        <div className="about-card backdrop-blur-3xl block w-[100%] md:w-[50%] md:flex">
           <div className="profile w-[100%] h-100% md:w-[50%] drop-shadow-sm rounded-md relative bg-[#f4ece6]">
             <div className="content h-[400px] p-6 md:p-12 flex flex-col gap-12 items-center">
               <img
