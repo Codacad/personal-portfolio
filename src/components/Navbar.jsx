@@ -11,8 +11,8 @@ const Navbar = () => {
 
   const handleTogglerChange = () => {
     setToggler(!toggler);
-    mobileMenuHandler()
-     if (!toggler) {
+    mobileMenuHandler();
+    if (!toggler) {
       setBarOne("bar bar-one transform-bar-one");
       setBarTwo("bar bar-two transform-bar-two");
       setBarThree("bar bar-three transform-bar-three");
@@ -48,7 +48,11 @@ const Navbar = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `${isActive ? "text-blue-600 font-[100]" : ""}`
+                `${
+                  isActive
+                  ? "text-blue-600 font-[100] relative after:absolute after:block after:-bottom-4 after:content-[''] after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                  : "relative after:absolute after:block after:-bottom-4 after:content-[''] hover:after:transition-width hover:after:ease-in-out hover:after:duration-500 after:w-[0] hover:after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                }`
               }
             >
               About Me
@@ -58,7 +62,11 @@ const Navbar = () => {
             <NavLink
               to="/resume"
               className={({ isActive }) =>
-                `${isActive ? "text-blue-600 font-[100]" : ""}`
+                `${
+                  isActive
+                  ? "text-blue-600 font-[100] relative after:absolute after:block after:-bottom-4 after:content-[''] after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                  : "relative after:absolute after:block after:-bottom-4 after:content-[''] hover:after:transition-width hover:after:ease-in-out hover:after:duration-500 after:w-[0] hover:after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                }`
               }
             >
               Resume
@@ -68,7 +76,11 @@ const Navbar = () => {
             <NavLink
               to="/projects"
               className={({ isActive }) =>
-                `${isActive ? "text-blue-600 font-[100]" : ""}`
+                `${
+                  isActive
+                    ? "text-blue-600 font-[100] relative after:absolute after:block after:-bottom-4 after:content-[''] after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                    : "relative after:absolute after:block after:-bottom-4 after:content-[''] hover:after:transition-width hover:after:ease-in-out hover:after:duration-500 after:w-[0] hover:after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                }`
               }
             >
               Projects
@@ -78,7 +90,11 @@ const Navbar = () => {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `${isActive ? "text-blue-600 font-[100]" : ""}`
+                `${
+                  isActive
+                  ? "text-blue-600 font-[100] relative after:absolute after:block after:-bottom-4 after:content-[''] after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                  : "relative after:absolute after:block after:-bottom-4 after:content-[''] hover:after:transition-width hover:after:ease-in-out hover:after:duration-500 after:w-[0] hover:after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                }`
               }
             >
               Contact
