@@ -8,7 +8,7 @@ const FrontendSkills = ({ skill }) => {
         <div className="content">
           <div className="progress-bar w-[100%] p-[1px] rounded-md border-1 shadow-inner border-gray-300">
             <span
-              className={`progress block p-1 rounded-md bg-blue-800`}
+              className={`progress block  max-md:p-[2px] rounded-md bg-blue-800`}
               style={{ width: `${skill.frequency}%`}}
             ></span>
           </div>
