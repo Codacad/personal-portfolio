@@ -3,12 +3,25 @@ import "../css/Navbar.css";
 import { useState, useContext } from "react";
 import MoblieMenuContext from "../context/MobileMenuContext";
 const Navbar = () => {
-  let {
-    barOne,
-    barTwo,
-    barThree,
-    handleTogglerChange,
-  } = useContext(MoblieMenuContext);
+  let { toggler, setToggler, mobileMenuHandler } =
+    useContext(MoblieMenuContext);
+  let [barOne, setBarOne] = useState("bar bar-one");
+  let [barTwo, setBarTwo] = useState("bar bar-two");
+  let [barThree, setBarThree] = useState("bar bar-three");
+
+  const handleTogglerChange = () => {
+    setToggler(!toggler);
+    mobileMenuHandler()
+     if (!toggler) {
+      setBarOne("bar bar-one transform-bar-one");
+      setBarTwo("bar bar-two transform-bar-two");
+      setBarThree("bar bar-three transform-bar-three");
+    } else {
+      setBarOne("bar bar-one");
+      setBarTwo("bar bar-two");
+      setBarThree("bar bar-three");
+    }
+  };
   return (
     <>
       <nav className="flex z-10 md:p-12 py-8 px-4 items-center justify-between backdrop-blur-sm">
@@ -35,7 +48,11 @@ const Navbar = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `${isActive ? "text-blue-600 font-[100]" : ""}`
+                `${
+                  isActive
+                  ? "text-blue-600 font-[100] relative after:absolute after:block after:-bottom-4 after:content-[''] after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                  : "relative after:absolute after:block after:-bottom-4 after:content-[''] hover:after:transition-width hover:after:ease-in-out hover:after:duration-500 after:w-[0] hover:after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                }`
               }
             >
               About Me
@@ -45,7 +62,11 @@ const Navbar = () => {
             <NavLink
               to="/resume"
               className={({ isActive }) =>
-                `${isActive ? "text-blue-600 font-[100]" : ""}`
+                `${
+                  isActive
+                  ? "text-blue-600 font-[100] relative after:absolute after:block after:-bottom-4 after:content-[''] after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                  : "relative after:absolute after:block after:-bottom-4 after:content-[''] hover:after:transition-width hover:after:ease-in-out hover:after:duration-500 after:w-[0] hover:after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                }`
               }
             >
               Resume
@@ -55,7 +76,11 @@ const Navbar = () => {
             <NavLink
               to="/projects"
               className={({ isActive }) =>
-                `${isActive ? "text-blue-600 font-[100]" : ""}`
+                `${
+                  isActive
+                    ? "text-blue-600 font-[100] relative after:absolute after:block after:-bottom-4 after:content-[''] after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                    : "relative after:absolute after:block after:-bottom-4 after:content-[''] hover:after:transition-width hover:after:ease-in-out hover:after:duration-500 after:w-[0] hover:after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                }`
               }
             >
               Projects
@@ -65,7 +90,11 @@ const Navbar = () => {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `${isActive ? "text-blue-600 font-[100]" : ""}`
+                `${
+                  isActive
+                  ? "text-blue-600 font-[100] relative after:absolute after:block after:-bottom-4 after:content-[''] after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                  : "relative after:absolute after:block after:-bottom-4 after:content-[''] hover:after:transition-width hover:after:ease-in-out hover:after:duration-500 after:w-[0] hover:after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                }`
               }
             >
               Contact

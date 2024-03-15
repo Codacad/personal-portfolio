@@ -1,71 +1,310 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedin,
+  faDev,
+  faFacebook,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import FrontendSkills from "../components/subcomponents/FrontendSkills";
 const Resume = () => {
+  const [frontendSkillList, setFrontendSkillList] = useState([
+    { srno: 1, skill: "ReactJS", frequency: 70 },
+    { srno: 2, skill: "JavaScript", frequency: 80 },
+    { srno: 3, skill: "HTML", frequency: 90 },
+    { srno: 4, skill: "CSS", frequency: 85 },
+    { srno: 5, skill: "Tailwid CSS", frequency: 65 },
+    { srno: 6, skill: "SASS", frequency: 75 },
+    { srno: 7, skill: "Responsive Design", frequency: 80 },
+  ]);
+  const [backendSkillList, setBackendSkillList] = useState([
+    { srno: 1, skill: "NodeJS", frequency: "75%" },
+    { srno: 2, skill: "Express", frequency: "80%" },
+    { srno: 3, skill: "MongoDB", frequency: "90%" },
+    { srno: 4, skill: "Mongoose", frequency: "85%" },
+    { srno: 5, skill: "Git/Github", frequency: "65%" },
+    { srno: 6, skill: "RESTful APIs", frequency: "75%" },
+    { srno: 7, skill: "Deployment", frequency: "80%" },
+  ]);
   return (
     <>
-      <div className="w-[100%] bg-[#f4ece6] resume-container p-12 relative">
-        <div className="content bg-white shadow-2xl border-r-10 min-h-[100vh] p-4 relative before:-content-[''] before:absolute before:top-0 before:left-0 before:w-[100px] before:h-[100px] before:border-l-4 before:border-t-4 before:border-blue-700 after:-content-[''] after:absolute after:bottom-0 after:right-0 after:w-[100px] after:h-[100px] after:border-r-4 after:border-b-4 after:border-blue-700">
+      <div className="w-[100%] bg-[#f4ece6] resume-container p-12 max-md:p-4 max-sm:p-2 relative">
+        <div className="content border-r-10 min-h-[100vh] p-4 pt-8 relative before:-content-[''] before:absolute before:top-0 before:left-0 before:w-[100px] before:h-[100px] before:border-l-4 before:border-t-4 before:border-blue-700 after:-content-[''] after:absolute after:bottom-0 after:right-0 after:w-[100px] after:h-[100px] after:border-r-4 after:border-b-4 after:border-blue-700">
           <div className="header flex justify-center">
-            <h1 className="text-6xl relative text-gray-300 flex items-center uppercase after:content-[''] after:absolute after:-bottom-4 after:w-[100%] after:bg-blue-700">
-              <span className="w-[28px] h-[28px] mt-1 bg-blue-700 mr-2 block"></span>
-              <span>Resume</span>
+            <h1 className="text-4xl relative text-gray-700 flex font-bold items-center uppercase after:content-[''] after:absolute after:-bottom-4 after:w-[100%] after:bg-blue-700">
+              {/* <span className="w-[28px] h-[28px] mt-1 bg-blue-700 mr-2 block"></span> */}
+              <span>Mohd Rizwan</span>
             </h1>
           </div>
-          <div className="resume grid grid-cols-3 mt-20 gap-6">
-            <div className="summary bg-red-200 col-span-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              sapiente ut illum voluptas, odit voluptatibus cum dolorum placeat
-              iusto sint fuga praesentium delectus architecto ipsum rerum iure,
-              officiis cupiditate? Magni expedita illo inventore saepe velit
-              quisquam consequuntur fuga neque quidem dolores suscipit officia a
-              tempora quis, fugit ipsum eum voluptas omnis quod enim earum
-              doloremque! Assumenda quisquam aliquid soluta quibusdam repellat!
-              Mollitia distinctio natus nostrum esse error qui officia corporis
-              perspiciatis deserunt ea fuga alias dolor illum, eum nisi, atque
-              quasi sit, veritatis architecto? A repellendus, odio corrupti quis
-              est eos veniam nisi iure non aliquam. Nam qui animi reprehenderit!
+          <div className="contact flex flex-col pt-8 gap-4 items-center justify-center">
+            <div className="contact-social">
+              <ul className="flex gap-4">
+                <li>
+                  <Link
+                    to={"https://www.linkedin.com/in/codacad/"}
+                    target="_blank"
+                    className="hover:opacity-80"
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={"https://github.com/Codacad"}
+                    target="_blank"
+                    className="hover:opacity-80"
+                  >
+                    <FontAwesomeIcon icon={faGithub} />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={"https://www.frontendmentor.io/profile/Codacad"}
+                    target="_blank"
+                    className="hover:opacity-80"
+                  >
+                    <FontAwesomeIcon icon={faDev} />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={"https://www.facebook.com/rizcodi"}
+                    target="_blank"
+                    className="hover:opacity-80"
+                  >
+                    <FontAwesomeIcon icon={faFacebook} />
+                  </Link>
+                </li>
+              </ul>
             </div>
-            <div className="education bg-green-200">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              sapiente ut illum voluptas, odit voluptatibus cum dolorum placeat
-              iusto sint fuga praesentium delectus architecto ipsum rerum iure,
-              officiis cupiditate? Magni expedita illo inventore saepe velit
-              quisquam consequuntur fuga neque quidem dolores suscipit officia a
-              tempora quis, fugit ipsum eum voluptas omnis quod enim earum
-              doloremque! Assumenda quisquam aliquid soluta quibusdam repellat!
-              Mollitia distinctio natus nostrum esse error qui officia corporis
-              perspiciatis deserunt ea fuga alias dolor illum, eum nisi, atque
-              quasi sit, veritatis architecto? A repellendus, odio corrupti quis
-              est eos veniam nisi iure non aliquam. Nam qui animi reprehenderit!
+          </div>
+          <div className="resume grid max-md:block grid-cols-3 mt-20 gap-6">
+            <div className="summary col-span-3">
+              <div className="title mb-4 flex flex-col">
+                <h1 className="text-xl flex justify-between items-center text-gray-700 font-bold border-l-4 pl-2 border-blue-700">
+                  <span>Professional Summary:</span>
+                  <Link
+                    to={""}
+                    download={""}
+                    className="text-sm rounded-md font-poppins shadow-md font-[300] transition-background duration-200 bg-blue-700 hover:bg-blue-800 text-white border-2 border-blue-700 p-2 px-4"
+                  >
+                    <FontAwesomeIcon icon={faDownload} className="mr-1" />{" "}
+                    Download CV
+                  </Link>
+                </h1>
+                <span className="mt-4 bg-blue-700 w-[170px] text-white p-1 box-border text-center">
+                  <span>Fullstack Developer</span>
+                </span>
+              </div>
+              <p className="leading-[28px] text-gray-600 font-madimi_one border-b-1 border-gray-300 pb-6">
+                Experienced Frontend and Fullstack Developer with a proven track
+                record of creating visually appealing and highly functional user
+                interfaces using{" "}
+                <Link
+                  className="inlinetechlink"
+                  to={"https://www.codecademy.com/catalog/language/html-css"}
+                >
+                  HTML/CSS
+                </Link>
+                ,{" "}
+                <Link
+                  className="inlinetechlink"
+                  to={
+                    "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics"
+                  }
+                >
+                  JavaScript
+                </Link>
+                ,{" "}
+                <Link
+                  className="inlinetechlink"
+                  to={"https://react.dev/"}
+                ></Link>
+                , and{" "}
+                <Link className="inlinetechlink" to={"https://tailwindcss.com"}>
+                  Tailwind CSS
+                </Link>
+                . Possessing in-depth knowledge of backend technologies such as
+                Node.js, Express.js, MongoDB, and Mongoose, I excel in building
+                robust server-side applications with a keen focus on security
+                and scalability. Proficient in implementing authentication and
+                authorization protocols to safeguard data integrity and user
+                privacy. With a collaborative mindset and expertise in
+                Git/GitHub for version control, I thrive in team environments,
+                fostering effective communication and seamless project
+                collaboration. Dedicated to delivering excellence in every
+                aspect of development, I am driven by a passion for innovation
+                and a commitment to continuous learning, ensuring I remain at
+                the forefront of emerging technologies and industry best
+                practices.
+              </p>
             </div>
-            <div className="experience bg-blue-200">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
-              suscipit beatae commodi totam debitis dolore odio earum quo! Vero
-              ad fugit sunt, omnis rem itaque a magni beatae accusantium soluta
-              magnam consequuntur deleniti libero repudiandae ratione non at
-              suscipit! Omnis magnam harum impedit nobis. Ipsam cumque quae ex
-              aspernatur, provident nesciunt placeat nobis nostrum voluptatem!
-              Quod sequi qui, architecto ex accusamus labore saepe repellendus
-              tempora expedita asperiores quaerat esse libero pariatur omnis
-              aliquam alias illo, facere, excepturi laborum! Ducimus est iusto
-              consequatur, aperiam placeat nihil et, eos laboriosam nemo sit
-              quasi? Dolorum alias autem incidunt assumenda nam eos praesentium
-              consectetur.
+            <div className="education flex flex-col">
+              <h1 className="border-l-4 mb-4 border-blue-700 pl-2 text-2xl font-[600]">
+                Education
+              </h1>
+              <div className="course border-l-1 border-gray-200 pb-4 mt-4">
+                <span className="bg-blue-700 px-2 py-1 text-sm font-[300] text-white mb-2 block w-12 text-right">
+                  2015
+                </span>
+                <div className="course-name pl-4">
+                  <h1 className="text-md font-[600] mt-4">
+                    BCA (Bachelor in Computer Application)
+                  </h1>
+                  <span className="text-sm text-gray-400">
+                    Teerthankar Mahaveer University, Moradabad, Uttar Pradesh
+                    (India)
+                  </span>
+                  <div className="specialization">
+                    <h2 className="text-sm text-gray-500 font-[400]">
+                      <span className="font-bold">Specialization:</span>{" "}
+                      Computer Science &amp; Technology
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div className="course border-l-1 border-gray-200 pb-4 mt-4">
+                <span className="bg-blue-700 px-2 py-1 text-sm font-[300] text-white mb-2 block w-12 text-right">
+                  2015
+                </span>
+                <div className="course-name pl-4">
+                  <h1 className="text-md font-[600] mt-4">
+                    DCA (Diploma in Computer Application)
+                  </h1>
+                  <span className="text-sm text-gray-400">
+                    Deepak Saxena Institute of Education, Thakurdwara,
+                    Moradabad, Uttar Pradesh (India)
+                  </span>
+                  <div className="specialization">
+                    <h2 className="text-sm text-gray-500 font-[400]">
+                      <span className="font-bold">Specialization:</span>{" "}
+                      Computer Science &amp; Technology
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div className="course border-l-1 border-gray-200 pb-4 mt-4">
+                <span className="bg-blue-700 px-2 py-1 text-sm font-[300] text-white mb-2 block w-28 text-right">
+                  2017 - Present
+                </span>
+                <div className="course-name pl-4">
+                  <h1 className="text-md font-[600] mt-4">
+                    <span className="font-bold">Specialization:</span> Fullstack
+                    Web Development & Computer Science
+                  </h1>
+                  <span className="text-md font-[400] text-gray-400">
+                    Self-paced courses on YouTube in Fullstack Web Development
+                    and Computer Science
+                  </span>
+                </div>
+              </div>
+              <div className="course border-l-1 border-gray-200 pb-4 mt-4">
+                <span className="bg-blue-700 px-2 py-1 text-sm font-[300] text-white mb-2 block w-12 text-right">
+                  2018
+                </span>
+                <div className="course-name pl-4">
+                  <h1 className="text-md font-[600] mt-4">
+                    B.COM (Bachelor in Commerce)
+                  </h1>
+                  <span className="text-sm text-gray-400">
+                    Ahilyabai Holkar Mahavidhalya, Thakurdwara, Uttar Pradesh
+                    (India)
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="skills bg-orange-200">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-              cum, sequi ipsam provident unde error ducimus minus voluptatibus
-              voluptate sunt aut porro accusamus ut reiciendis voluptas quam
-              nobis id repellat tempora consequuntur! Repellendus quisquam nemo
-              cum, neque quidem corrupti doloremque repellat ipsum ea. Quas
-              repellendus dolorem eaque nihil architecto tempore! Qui, similique
-              magnam maiores velit corporis sunt eius accusamus doloremque!
-              Inventore, accusantium voluptatibus incidunt amet repellendus quis
-              cupiditate aliquam dolore reprehenderit ratione facere quo, eaque
-              dicta. Voluptatibus animi blanditiis ad hic pariatur sunt corrupti
-              doloribus commodi, enim delectus, laudantium placeat quae
-              suscipit. Non omnis culpa illum exercitationem, distinctio
-              repellat praesentium?
+            <div className="experience flex flex-col">
+              <h1 className="border-l-4 mb-4 border-blue-700 pl-2 text-2xl font-[600]">
+                Experience
+              </h1>
+              <div className="course border-l-1 border-gray-200 pb-4 mt-4">
+                <span className="bg-blue-700 px-2 py-1 text-sm font-[300] text-white mb-2 block w-28 text-right">
+                  2019 - Present
+                </span>
+                <div className="course-name pl-4">
+                  <h1 className="text-md font-[600] mt-4">
+                    Frontend Developer
+                  </h1>
+                  <span className="text-sm text-gray-400">Freelancer</span>
+                  <div className="specialization">
+                    <h2 className="text-sm text-gray-500 font-[400]">
+                      <span className="font-bold">Specialization:</span>{" "}
+                      ReactJS, JavaScript, HTML/CSS, TailwindCSS, etc.
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div className="course border-l-1 border-gray-200 pb-4 mt-4">
+                <span className="bg-blue-700 px-2 py-1 text-sm font-[300] text-white mb-2 block w-28 text-right">
+                  2019 - Present
+                </span>
+                <div className="course-name pl-4">
+                  <h1 className="text-md font-[600] mt-4">Backend Developer</h1>
+                  <span className="text-sm text-gray-400">Freelancer</span>
+                  <div className="specialization">
+                    <h2 className="text-sm text-gray-500 font-[400]">
+                      <span className="font-bold">Specialization:</span> NodeJS,
+                      ExpressJS, MongoDB, Mongoose, React.js / Node.js, etc.
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div className="course border-l-1 border-gray-200 pb-4 mt-4">
+                <span className="bg-blue-700 px-2 py-1 text-sm font-[300] text-white mb-2 block w-28 text-right">
+                  2019 - Present
+                </span>
+                <div className="course-name pl-4">
+                  <h1 className="text-md font-[600] mt-4">Web Designer</h1>
+                  <span className="text-sm text-gray-400">Freelancer</span>
+                  <div className="specialization">
+                    <h2 className="text-sm text-gray-500 font-[400]">
+                      <span className="font-bold">Specialization:</span> HTML,
+                      CSS, SASS, JavaScript, Responsive Web Design, Web
+                      Typography, etc.
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div className="course border-l-1 border-gray-200 pb-4 mt-4">
+                <span className="bg-blue-700 px-2 py-1 text-sm font-[300] text-white mb-2 block w-28 text-right">
+                  2017 - Present
+                </span>
+                <div className="course-name pl-4">
+                  <h1 className="text-md font-[600] mt-4">
+                    <span className="font-bold">Specialization:</span> Fullstack
+                    Web Development & Computer Science
+                  </h1>
+                  <span className="text-md font-[400] text-gray-400">
+                    Self-paced courses on YouTube in Fullstack Web Development
+                    and Computer Science
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="skills flex flex-col">
+              <h1 className="border-l-4 mb-4 border-blue-700 pl-2 text-2xl font-[600]">
+                Skills
+              </h1>
+              <div className="frontend-skills">
+                <h3 className="mb-2 text-lg font-[600] ">Front End Skills:</h3>
+                <div className="flex flex-col gap-2">
+                  {frontendSkillList.map((skill, index) => {
+                    return <FrontendSkills key={index} skill={skill} />;
+                  })}
+                </div>
+              </div>
+              <div className="backend-skills">
+                <h3 className="mb-8 text-lg font-[600] pt-4">
+                  Back End Skills:
+                </h3>
+                <div className="flex flex-col gap-2">
+                  {backendSkillList.map((skill, index) => {
+                    return <FrontendSkills key={index} skill={skill} />;
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </div>
