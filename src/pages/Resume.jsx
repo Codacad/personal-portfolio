@@ -9,6 +9,7 @@ import {
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import FrontendSkills from "../components/subcomponents/FrontendSkills";
+import BackendSkills from "../components/subcomponents/BackendSkills";
 const Resume = () => {
   const [frontendSkillList, setFrontendSkillList] = useState([
     { srno: 1, skill: "ReactJS", frequency: 70 },
@@ -301,7 +302,7 @@ const Resume = () => {
                 </h3>
                 <div className="flex flex-col gap-2">
                   {backendSkillList.map((skill, index) => {
-                    return <FrontendSkills key={index} skill={skill} />;
+                    return <BackendSkills key={index} skill={skill} />;
                   })}
                 </div>
               </div>
