@@ -20,13 +20,13 @@ const Resume = () => {
     { srno: 7, skill: "Responsive Design", frequency: 80 },
   ]);
   const [backendSkillList, setBackendSkillList] = useState([
-    { srno: 1, skill: "NodeJS", frequency: "75%" },
-    { srno: 2, skill: "Express", frequency: "80%" },
-    { srno: 3, skill: "MongoDB", frequency: "90%" },
-    { srno: 4, skill: "Mongoose", frequency: "85%" },
-    { srno: 5, skill: "Git/Github", frequency: "65%" },
-    { srno: 6, skill: "RESTful APIs", frequency: "75%" },
-    { srno: 7, skill: "Deployment", frequency: "80%" },
+    { srno: 1, skill: "NodeJS", frequency: 75 },
+    { srno: 2, skill: "Express", frequency: 80 },
+    { srno: 3, skill: "MongoDB", frequency: 65 },
+    { srno: 4, skill: "Mongoose", frequency: 85 },
+    { srno: 5, skill: "Git/Github", frequency: 65 },
+    { srno: 6, skill: "RESTful APIs", frequency: 75 },
+    { srno: 7, skill: "Deployment", frequency: 80 },
   ]);
   return (
     <>
@@ -88,17 +88,17 @@ const Resume = () => {
                   <Link
                     to={""}
                     download={""}
-                    className="text-sm rounded-md font-poppins shadow-md font-[300] transition-background duration-200 bg-blue-700 hover:bg-blue-800 text-white border-2 border-blue-700 p-2 px-4"
+                    className="text-sm max-sm:text-[8px] rounded-md font-poppins shadow-md font-[300] transition-background duration-200 bg-blue-700 hover:bg-blue-800 text-white border-2 border-blue-700 p-2 max-sm:p-1 max-sm:px-2 px-4"
                   >
                     <FontAwesomeIcon icon={faDownload} className="mr-1" />{" "}
                     Download CV
                   </Link>
                 </h1>
-                <span className="mt-4 bg-blue-700 w-[170px] text-white p-1 box-border text-center">
+                <span className="mt-4 max-md:mt-1 max-sm:text-sm max-sm:bg-transparent max-sm:text-gray-500 bg-blue-700 w-[170px] max-sm:w-[140px] text-white p-1 box-border text-center">
                   <span>Fullstack Developer</span>
                 </span>
               </div>
-              <p className="leading-[28px] text-gray-600 font-madimi_one border-b-1 border-gray-300 pb-6">
+              <p className="max-sm:text-sm leading-[28px] max-sm:leading-[30px] text-gray-600 font-madimi_one border-b-1 border-gray-300 pb-6">
                 Experienced Frontend and Fullstack Developer with a proven track
                 record of creating visually appealing and highly functional user
                 interfaces using{" "}
@@ -141,7 +141,7 @@ const Resume = () => {
                 practices.
               </p>
             </div>
-            <div className="education flex flex-col">
+            <div className="education flex flex-col max-md:mt-4">
               <h1 className="border-l-4 mb-4 border-blue-700 pl-2 text-2xl font-[600]">
                 Education
               </h1>
@@ -283,7 +283,7 @@ const Resume = () => {
                 </div>
               </div>
             </div>
-            <div className="skills flex flex-col">
+            <div className="skills flex flex-col gap-4">
               <h1 className="border-l-4 mb-4 border-blue-700 pl-2 text-2xl font-[600]">
                 Skills
               </h1>
@@ -296,7 +296,7 @@ const Resume = () => {
                 </div>
               </div>
               <div className="backend-skills">
-                <h3 className="mb-8 text-lg font-[600] pt-4">
+                <h3 className="mb-2 text-lg font-[600] pt-4">
                   Back End Skills:
                 </h3>
                 <div className="flex flex-col gap-2">
