@@ -8,12 +8,13 @@ import {
   faFacebook,
   faDev
 } from "@fortawesome/free-brands-svg-icons";
+import { motion } from "framer-motion";
 import { faFile } from "@fortawesome/free-regular-svg-icons";
 import { faDiagramProject } from "@fortawesome/free-solid-svg-icons";
 const About = () => {
   return (
     <>
-      <div className="about-me backdrop-blur-3xl md:p-12 relative w-[100%]">
+      <motion.div initial={{opacity:0}} whileInView={{opacity:1}} viewport={{once:true}} transition={{duration:2}} className="about-me backdrop-blur-3xl md:p-12 relative w-[100%]">
         <div className="about-card backdrop-blur-3xl block w-[100%] md:w-[50%] md:flex">
           <div className="profile w-[100%] h-100% md:w-[50%] drop-shadow-sm rounded-md relative bg-[#f4ece6]">
             <div className="content h-[400px] p-6 md:p-12 flex flex-col gap-12 items-center">
@@ -86,7 +87,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div className="about-footer md:p-12 p-8 sm:bg-white bg-[#f4ece6]">
         <div className="content text-sm flex sm:flex-row flex-col justify-center md:justify-end md:gap-16 gap-8">
           <div className="call flex flex-col items-center gap-2">
