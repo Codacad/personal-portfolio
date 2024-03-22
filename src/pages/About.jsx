@@ -14,15 +14,13 @@ import { faDiagramProject } from "@fortawesome/free-solid-svg-icons";
 const About = () => {
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 2 }}
-        className="about-me backdrop-blur-3xl md:p-12 relative w-[100%]"
-      >
+      <motion.div className="about-me backdrop-blur-3xl md:p-12 relative w-[100%]">
         <div className="about-card backdrop-blur-3xl block w-[100%] md:w-[50%] md:flex">
-          <motion.div initial={{x:"-100%"}} animate={{x:0}} className="profile w-[100%] h-100% md:w-[50%] drop-shadow-sm rounded-md relative bg-[#f4ece6]">
+          <motion.div
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            className="profile w-[100%] h-100% md:w-[50%] drop-shadow-sm rounded-md relative bg-[#f4ece6]"
+          >
             <div className="content h-[400px] p-6 md:p-12 flex flex-col gap-12 items-center">
               <img
                 src={MyPic}
@@ -70,31 +68,74 @@ const About = () => {
               </div>
             </div>
           </motion.div>
-          <motion.div initial={{x:"400%"}} animate={{x:0}} transition={{duration:0.3}} className="hello flex flex-col gap-6 py-10 px-6 w-[100%] md:w-[60%] items-center md:items-start">
+          <motion.div
+            initial={{ x: "400%" }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3 }}
+            className="hello flex flex-col gap-6 py-10 px-6 w-[100%] md:w-[60%] items-center md:items-start"
+          >
             <motion.h1 className="md:text-8xl flex text-4xl sm:text-6xl font-bold font-madimi_one">
-              <motion.h2 initial={{y:"-100%"}} transition={{duration:.2, delay:.3}} animate={{y:0}}>H</motion.h2>
-              <motion.h2 initial={{y:"-200%"}} transition={{delay:0.2, duration:0.25}} animate={{y:0}}>e</motion.h2>
-              <motion.h2 initial={{y:"-300%"}} transition={{delay:0.25, duration:0.3}} animate={{y:0}}>l</motion.h2>
-              <motion.h2 initial={{y:"-400%"}} transition={{delay:0.3, duration:0.35}} animate={{y:0}}>l</motion.h2>
-              <motion.h2 initial={{y:"-500%"}} transition={{delay:0.35, duration:0.4}} animate={{y:0}}>o</motion.h2>
+              <motion.h2
+                initial={{ y: "-100%" }}
+                transition={{ duration: 0.2, delay: 0.3 }}
+                animate={{ y: 0 }}
+              >
+                H
+              </motion.h2>
+              <motion.h2
+                initial={{ y: "-200%" }}
+                transition={{ delay: 0.2, duration: 0.25 }}
+                animate={{ y: 0 }}
+              >
+                e
+              </motion.h2>
+              <motion.h2
+                initial={{ y: "-300%" }}
+                transition={{ delay: 0.25, duration: 0.3 }}
+                animate={{ y: 0 }}
+              >
+                l
+              </motion.h2>
+              <motion.h2
+                initial={{ y: "-400%" }}
+                transition={{ delay: 0.3, duration: 0.35 }}
+                animate={{ y: 0 }}
+              >
+                l
+              </motion.h2>
+              <motion.h2
+                initial={{ y: "-500%" }}
+                transition={{ delay: 0.35, duration: 0.4 }}
+                animate={{ y: 0 }}
+              >
+                o
+              </motion.h2>
             </motion.h1>
             <h3 className="md:text-2xl text-xl  font-[600]">
               Here&rsquo;s who I am & what I do
             </h3>
             <div className="actions flex gap-10">
               <Link to={""}>
-                <motion.button whileHover={{scale:0.95}} whileTap={{scale:1.025}} className="bg-blue-700 hover:ring-1 ring-blue-500 text-white py-2 rounded-xl px-4 hover:bg-white hover:text-blue-700 border border-blue-700">
+                <motion.button
+                  whileHover={{ scale: 0.95 }}
+                  whileTap={{ scale: 1.025 }}
+                  className="bg-blue-700 hover:ring-1 ring-blue-500 text-white py-2 rounded-xl px-4 hover:bg-white hover:text-blue-700 border border-blue-700"
+                >
                   <FontAwesomeIcon className="mr-1 text-sm" icon={faFile} />{" "}
                   Resume
                 </motion.button>
               </Link>
-              <Link >
-                <motion.button whileHover={{scale:0.95}} whileTap={{scale:1.025}} className="bg-blue-700 hover:ring-1 ring-blue-500 text-white p-2 text-sm md:text-[16px] rounded-xl px-4 hover:bg-white hover:text-blue-700 border border-blue-700">
-                <FontAwesomeIcon
-                  className="mr-1 text-sm"
-                  icon={faDiagramProject}
-                />{" "}
-                Projects
+              <Link>
+                <motion.button
+                  whileHover={{ scale: 0.95 }}
+                  whileTap={{ scale: 1.025 }}
+                  className="bg-blue-700 hover:ring-1 ring-blue-500 text-white p-2 text-sm md:text-[16px] rounded-xl px-4 hover:bg-white hover:text-blue-700 border border-blue-700"
+                >
+                  <FontAwesomeIcon
+                    className="mr-1 text-sm"
+                    icon={faDiagramProject}
+                  />{" "}
+                  Projects
                 </motion.button>
               </Link>
             </div>
