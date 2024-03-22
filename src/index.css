@@ -9,3 +9,13 @@
     @apply bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100;
   }
 }
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+}
