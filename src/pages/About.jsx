@@ -6,7 +6,7 @@ import {
   faLinkedin,
   faGithub,
   faFacebook,
-  faDev
+  faDev,
 } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
 import { faFile } from "@fortawesome/free-regular-svg-icons";
@@ -14,9 +14,15 @@ import { faDiagramProject } from "@fortawesome/free-solid-svg-icons";
 const About = () => {
   return (
     <>
-      <motion.div initial={{opacity:0}} whileInView={{opacity:1}} viewport={{once:true}} transition={{duration:2}} className="about-me backdrop-blur-3xl md:p-12 relative w-[100%]">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 2 }}
+        className="about-me backdrop-blur-3xl md:p-12 relative w-[100%]"
+      >
         <div className="about-card backdrop-blur-3xl block w-[100%] md:w-[50%] md:flex">
-          <div className="profile w-[100%] h-100% md:w-[50%] drop-shadow-sm rounded-md relative bg-[#f4ece6]">
+          <motion.div initial={{x:"-100%"}} animate={{x:0}} className="profile w-[100%] h-100% md:w-[50%] drop-shadow-sm rounded-md relative bg-[#f4ece6]">
             <div className="content h-[400px] p-6 md:p-12 flex flex-col gap-12 items-center">
               <img
                 src={MyPic}
@@ -31,44 +37,65 @@ const About = () => {
                 Web Developer
               </p>
             </div>
-            <div className="footer rounded-b-md absolute  bottom-0 w-[100%] bg-white p-2 flex justify-center">
+            <div className="footer bg-glass rounded-b-md absolute  bottom-0 w-[100%] bg-white p-2 flex justify-center">
               <div className="social-medias w-[50%] flex justify-around md:gap-8">
-                <Link className="md:text-2xl hover:opacity-80" to={"https://www.linkedin.com/in/codacad/"} target="_blank">
+                <Link
+                  className="md:text-2xl hover:opacity-80"
+                  to={"https://www.linkedin.com/in/codacad/"}
+                  target="_blank"
+                >
                   <FontAwesomeIcon icon={faLinkedin} />
                 </Link>
-                <Link className="md:text-2xl hover:opacity-80" to={"https://github.com/Codacad"} target="_blank">
+                <Link
+                  className="md:text-2xl hover:opacity-80"
+                  to={"https://github.com/Codacad"}
+                  target="_blank"
+                >
                   <FontAwesomeIcon icon={faGithub} />
                 </Link>
-                <Link className="md:text-2xl hover:opacity-80" to={"https://www.frontendmentor.io/profile/Codacad"} target="_blank">
+                <Link
+                  className="md:text-2xl hover:opacity-80"
+                  to={"https://www.frontendmentor.io/profile/Codacad"}
+                  target="_blank"
+                >
                   <FontAwesomeIcon icon={faDev} />
                 </Link>
-                <Link className="md:text-2xl hover:opacity-80" to={"https://www.facebook.com/rizcodi/"} target="_blank">
+                <Link
+                  className="md:text-2xl hover:opacity-80"
+                  to={"https://www.facebook.com/rizcodi/"}
+                  target="_blank"
+                >
                   <FontAwesomeIcon icon={faFacebook} />
                 </Link>
               </div>
             </div>
-          </div>
-          <div className="hello flex flex-col gap-6 py-10 px-6 w-[100%] md:w-[60%] items-center md:items-start">
-            <h1 className="md:text-8xl text-4xl sm:text-6xl font-bold font-madimi_one">
-              Hello
-            </h1>
+          </motion.div>
+          <motion.div initial={{x:"400%"}} animate={{x:0}} transition={{duration:0.3}} className="hello flex flex-col gap-6 py-10 px-6 w-[100%] md:w-[60%] items-center md:items-start">
+            <motion.h1 className="md:text-8xl flex text-4xl sm:text-6xl font-bold font-madimi_one">
+              <motion.h2 initial={{y:"-100%"}} transition={{duration:.2, delay:.3}} animate={{y:0}}>H</motion.h2>
+              <motion.h2 initial={{y:"-200%"}} transition={{delay:0.2, duration:0.25}} animate={{y:0}}>e</motion.h2>
+              <motion.h2 initial={{y:"-300%"}} transition={{delay:0.25, duration:0.3}} animate={{y:0}}>l</motion.h2>
+              <motion.h2 initial={{y:"-400%"}} transition={{delay:0.3, duration:0.35}} animate={{y:0}}>l</motion.h2>
+              <motion.h2 initial={{y:"-500%"}} transition={{delay:0.35, duration:0.4}} animate={{y:0}}>o</motion.h2>
+            </motion.h1>
             <h3 className="md:text-2xl text-xl  font-[600]">
               Here&rsquo;s who I am & what I do
             </h3>
             <div className="actions flex gap-10">
-              <Link
-                className="bg-blue-700 text-white py-2 rounded-xl px-4 hover:bg-white hover:text-blue-700 border border-blue-700"
-                to={""}
-              >
-                <FontAwesomeIcon className="mr-1 text-sm" icon={faFile} />{" "}
-                Resume
+              <Link to={""}>
+                <motion.button whileHover={{scale:0.95}} whileTap={{scale:1.025}} className="bg-blue-700 hover:ring-1 ring-blue-500 text-white py-2 rounded-xl px-4 hover:bg-white hover:text-blue-700 border border-blue-700">
+                  <FontAwesomeIcon className="mr-1 text-sm" icon={faFile} />{" "}
+                  Resume
+                </motion.button>
               </Link>
-              <Link className="bg-blue-700 text-white p-2 text-sm md:text-[16px] rounded-xl px-4 hover:bg-white hover:text-blue-700 border border-blue-700">
+              <Link >
+                <motion.button whileHover={{scale:0.95}} whileTap={{scale:1.025}} className="bg-blue-700 hover:ring-1 ring-blue-500 text-white p-2 text-sm md:text-[16px] rounded-xl px-4 hover:bg-white hover:text-blue-700 border border-blue-700">
                 <FontAwesomeIcon
                   className="mr-1 text-sm"
                   icon={faDiagramProject}
                 />{" "}
                 Projects
+                </motion.button>
               </Link>
             </div>
             <div className="summary">
@@ -80,12 +107,26 @@ const About = () => {
                 something amazing together.
               </p>
               <div className="tags flex flex-wrap gap-2 w-[100%] py-6 justify-center">
-                {["React", "Node.js", "Express", 'MongoDB', 'Mongoose', 'TailwindCSS', 'HTML/CSS/JS'].map((tag, index) => (
-                  <Link className="text-blue-700 text-sm hover:opacity-80" to={`#${tag}`} key={index}>#{tag}</Link>
+                {[
+                  "React",
+                  "Node.js",
+                  "Express",
+                  "MongoDB",
+                  "Mongoose",
+                  "TailwindCSS",
+                  "HTML/CSS/JS",
+                ].map((tag, index) => (
+                  <Link
+                    className="text-blue-700 text-sm hover:opacity-80"
+                    to={`#${tag}`}
+                    key={index}
+                  >
+                    #{tag}
+                  </Link>
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </motion.div>
       <div className="about-footer md:p-12 p-8 sm:bg-white bg-[#f4ece6]">
@@ -115,22 +156,38 @@ const About = () => {
             </h2>
             <ul className="flex gap-4">
               <li>
-                <Link to={"https://www.linkedin.com/in/codacad/"} target="_blank" className="hover:opacity-80">
+                <Link
+                  to={"https://www.linkedin.com/in/codacad/"}
+                  target="_blank"
+                  className="hover:opacity-80"
+                >
                   <FontAwesomeIcon icon={faLinkedin} />
                 </Link>
               </li>
               <li>
-                <Link to={"https://github.com/Codacad"} target="_blank" className="hover:opacity-80">
+                <Link
+                  to={"https://github.com/Codacad"}
+                  target="_blank"
+                  className="hover:opacity-80"
+                >
                   <FontAwesomeIcon icon={faGithub} />
                 </Link>
               </li>
               <li>
-                <Link to={"https://www.frontendmentor.io/profile/Codacad"} target="_blank" className="hover:opacity-80">
+                <Link
+                  to={"https://www.frontendmentor.io/profile/Codacad"}
+                  target="_blank"
+                  className="hover:opacity-80"
+                >
                   <FontAwesomeIcon icon={faDev} />
                 </Link>
               </li>
               <li>
-                <Link to={"https://www.facebook.com/rizcodi"} target="_blank" className="hover:opacity-80">
+                <Link
+                  to={"https://www.facebook.com/rizcodi"}
+                  target="_blank"
+                  className="hover:opacity-80"
+                >
                   <FontAwesomeIcon icon={faFacebook} />
                 </Link>
               </li>

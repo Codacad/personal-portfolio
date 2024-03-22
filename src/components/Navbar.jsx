@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import "../css/Navbar.css";
 import { useState, useContext } from "react";
 import MoblieMenuContext from "../context/MobileMenuContext";
+import { motion } from "framer-motion";
 const Navbar = () => {
   let { toggler, setToggler, mobileMenuHandler } =
     useContext(MoblieMenuContext);
@@ -55,7 +56,7 @@ const Navbar = () => {
                 }`
               }
             >
-              About Me
+              <motion.p whileTap={{scale:1}} whileHover={{scale:0.95}}>About Me</motion.p>
             </NavLink>
           </li>
           <li>
@@ -69,7 +70,7 @@ const Navbar = () => {
                 }`
               }
             >
-              Resume
+              <motion.p whileTap={{scale:1}} whileHover={{scale:0.95}}>Resume</motion.p>
             </NavLink>
           </li>
           <li>
@@ -83,7 +84,7 @@ const Navbar = () => {
                 }`
               }
             >
-              Projects
+              <motion.p whileTap={{scale:1}} whileHover={{scale:0.95}}>Projects</motion.p>
             </NavLink>
           </li>
           <li>
@@ -97,7 +98,7 @@ const Navbar = () => {
                 }`
               }
             >
-              Contact
+              <motion.p whileTap={{scale:1}} whileHover={{scale:0.95}}>Contact</motion.p>
             </NavLink>
           </li>
         </ul>
