@@ -81,7 +81,7 @@ export const projects = [
   },
   {
     id: 7,
-    name: "New Home Page (ReactJS, CSS, Responsive Design)",
+    name: "New Home Page",
     level: "Basic",
     suggestedBy: "Frontend Mentor",
 
@@ -96,12 +96,12 @@ export const projects = [
   },
   {
     id: 8,
-    name: "Intro Section with Dropdown (ReactJS, CSS, JavaScript, Reach Hooks)",
+    name: "Intro Section with Dropdown",
     level: "Basic",
     suggestedBy: "Frontend Mentor",
     description:
       "A dropdown menu that displays additional information when a user hovers over an item on the intro section of a landing page.",
-    tech_stack: ["REACTJS"],
+    tech_stack: ["REACTJS", "CSS", "JavaScript", "Reach Hooks"],
     url: "https://www.frontendmentor.io/solutions/intro-section-with-dropdown-reactjs-css-javascript-reach-hooks-n3JMrnV2jt",
     live_url: "https://codacad.github.io/Intro-Section-With-Dropdown/",
     gh_url: "https://github.com/Codacad/Intro-Section-With-Dropdown",

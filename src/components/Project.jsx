@@ -11,7 +11,7 @@ const Project = ({ project }) => {
       <div className="flex justify-between overflow-hidden items-center h-[100%]">
         <img
           className="w-[100%] h-[100%] object-cover object-top rounded-3xl"
-          src={project?.ui_img}
+          src={`../assets/projects-images/${project.name}.jpg`}
           alt="Image"
         />
       </div>
