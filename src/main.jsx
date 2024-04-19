@@ -10,9 +10,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <MoblieMenuContextProvider>
       <NextUIProvider>
-        <HashRouter>
+        <BrowserRouter>
           <App />
-        </HashRouter>
+        </BrowserRouter>
       </NextUIProvider>
     </MoblieMenuContextProvider>
   </React.StrictMode>
