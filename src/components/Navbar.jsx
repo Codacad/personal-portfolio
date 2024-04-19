@@ -25,7 +25,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav className="flex z-10 md:p-12 py-8 px-4 items-center justify-between backdrop-blur-sm">
+      <nav className="flex z-10 bg-gray-50 md:p-12 py-8 px-4 items-center justify-between backdrop-blur-sm">
         <div className="brand flex items-center">
           {/* <img src={Logo} alt="" /> */}
           <h1 className="md:text-2xl max-sm:text-sm font-madimi_one font-black flex items-center uppercase">

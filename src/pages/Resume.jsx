@@ -33,7 +33,7 @@ const Resume = () => {
   ]);
   return (
     <>
-      <motion.div className="w-[100%] bg-gray-50 resume-container p-12 max-md:p-4 max-sm:p-2 relative">
+      <motion.div className="w-[80%] mx-auto resume-container p-12 max-md:p-4 max-sm:p-2 relative">
         <div className="content min-h-[100vh] p-4 pt-8 relative before:-content-[''] before:absolute before:top-0 before:left-0 before:w-[100px] before:h-[100px] max-md:before:w-[20px] max-md:before:h-[20px] before:border-l-4 max-md:before:border-l-3 max-md:before:border-t-3 before:border-t-4 before:border-blue-700 after:-content-[''] after:absolute after:top-0 after:right-0 after:w-[100px]  max-md:after:w-[20px] after:h-[100px] max-md:after:h-[20px] after:border-r-4 after:border-t-4 max-md:after:border-t-3 max-md:after:border-r-3 after:border-blue-700">
           <div className="header flex justify-center">
             <h1 className="text-4xl max-md:text-2xl relative text-gray-700 flex font-bold items-center uppercase after:content-[''] after:absolute after:-bottom-4 after:w-[100%] after:bg-blue-700">
