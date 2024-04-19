@@ -33,7 +33,7 @@ const Project = ({ project }) => {
           </span>
         </div>
         <p className="text-gray-500">{project.description}</p>
-        <div className="links flex max-sm:text-sm gap-4">
+        <div className="links flex max-sm:text-[10px] gap-4">
           <Link
             target="_blank"
             className="text-gray-700 py-[5px] border-b-2 border-slate-500 flex items-center gap-2 md:hover:text-blue-700 md:hover:border-blue-700"
