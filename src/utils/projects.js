@@ -119,7 +119,7 @@ export const projects = [
     url: "https://www.frontendmentor.io/solutions/newsletter-signup-form-with-success-message-dP72UrE_l3",
     live_url: "https://codacad.github.io/newsletter-signup/",
     gh_url: "https://github.com/Codacad/newsletter-signup",
-    ui_img:"/personal-portfolio/src/assets/projects-images/intro-section-with-dropdown-navigation.jpg",
+    ui_img:"/personal-portfolio/src/assets/projects-images/Newsletter Signup Form with Success Message.jpg",
     created_at: "09 July 2023",
   },
   {

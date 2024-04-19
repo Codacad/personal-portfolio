@@ -8,14 +8,14 @@ const Projects = () => {
   return (
     <>
       <div className="bg-gray-100 w-[100%]">
-        <div className="projects relative md:w-[80%] m-auto md:py-8 p-2">
+        <div className="projects bg-gray-100 relative md:w-[80%] m-auto md:py-8 p-4">
           <div className="header mb-8 flex justify-between items-end">
             <div className="heading">
               <h3 className="flex items-center mb-2">
                 <span className="w-4 h-[2px] bg-blue-700 mr-2"></span>
-                <span className="text-xl text-gray-500">Projects</span>
+                <span className="md:text-xl text-sm text-gray-500">Projects</span>
               </h3>
-              <h1 className="text-4xl text-blue-700 font-[600]">
+              <h1 className="md:text-4xl text-2xl text-blue-700 font-[600]">
                 My <spanc className="">Latest</spanc>{" "}
                 <span className="">Projects</span>
               </h1>
