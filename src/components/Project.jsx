@@ -26,8 +26,10 @@ const Project = ({ project }) => {
             </span>
           ))}
         </div>
-        <div className="project-name">
-          <h1 className="sm:text-2xl max-sm:text-md text-gray-600 font-bold">{project.name}</h1>
+        <div className="project-nam">
+          <h1 className="sm:text-2xl max-sm:text-md text-gray-600 font-bold">
+            {project.name}
+          </h1>
           <span className="suggested-by max-sm:text-sm text-gray-400">
             A {project.suggestedBy} project
           </span>
@@ -41,7 +43,6 @@ const Project = ({ project }) => {
           >
             <FontAwesomeIcon className="text-[12px]" icon={faDev} />
             <span>Frontend Mentor</span>{" "}
-           
           </Link>
           <Link
             target="_blank"
@@ -50,7 +51,6 @@ const Project = ({ project }) => {
           >
             <FontAwesomeIcon className="text-[12px]" icon={faGithub} />
             <span>Github Repo</span>{" "}
-           
           </Link>
           <Link
             target="_blank"
@@ -59,19 +59,25 @@ const Project = ({ project }) => {
           >
             <FontAwesomeIcon className="text-[12px]" icon={faWebflow} />
             <span>Live Preview</span>{" "}
-           
           </Link>
         </div>
-        <Link
-          className="bg-blue-700 ml-auto w-30 flex items-center gap-2 text-center text-white py-[5px] px-4 rounded-3xl text-sm"
-          to={"/projects"}
-        >
-          <span>View Details</span>
-          <FontAwesomeIcon
-            className="text-[12px]"
-            icon={faArrowUpRightFromSquare}
-          />
-        </Link>
+        <div className="flex justify-between">
+          <span
+            className={`max-sm:text-[12px] h-6  border-1 border-yellow-800 bg-yellow-100 text-yellow-800 flex items-center rounded-md p-2`}
+          >
+            <span>{project.level}</span>
+          </span>
+          <Link
+            className="bg-blue-700 ml-auto w-30 flex items-center gap-2 text-center text-white py-[5px] px-4 rounded-3xl text-sm"
+            to={"/projects"}
+          >
+            <span>View Details</span>
+            <FontAwesomeIcon
+              className="text-[12px]"
+              icon={faArrowUpRightFromSquare}
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -37,6 +37,8 @@ const MoblieMenuContextProvider = ({ children }) => {
     mobileMenuHandler();
     handleTogglerChange();
   };
+
+
   return (
     <div>
       <MoblieMenuContext.Provider

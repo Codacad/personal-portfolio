@@ -1,4 +1,4 @@
-export const projects = [
+export const projectData = [
   {
     id: 1,
     name: "FAQ Accordion",
@@ -9,7 +9,7 @@ export const projects = [
     url: "https://www.frontendmentor.io/solutions/responsive-faaccordion-component-bEhs19Hqkz",
     live_url: "https://codacad.github.io/fa-accordion/",
     gh_url: "https://github.com/Codacad/fa-accordion",
-    ui_img:"/FAQ Accordion.jpg",
+    ui_img: "/FAQ Accordion.jpg",
     created_at: "17 December 2023",
   },
   {
@@ -22,7 +22,7 @@ export const projects = [
     url: "https://www.frontendmentor.io/solutions/responsive-advice-generator-app-zr4Boh0XF_",
     live_url: "https://codacad.github.io/advice-generator-app/",
     gh_url: "https://github.com/Codacad/advice-generator-app",
-    ui_img:"/Responsive Advice Generator App.jpg",
+    ui_img: "/Responsive Advice Generator App.jpg",
     created_at: "14 December 2023",
   },
   {
@@ -36,7 +36,7 @@ export const projects = [
     url: "https://www.frontendmentor.io/solutions/responsive-expenses-chart-component-zS_-pDM-7i",
     live_url: "https://codacad.github.io/expenses-chart-component/",
     gh_url: "https://github.com/Codacad/expenses-chart-component",
-    ui_img:"/Responsive Expenses Chart Component.jpg",
+    ui_img: "/Responsive Expenses Chart Component.jpg",
     created_at: "13 December 2023",
   },
   {
@@ -49,7 +49,7 @@ export const projects = [
     url: "https://www.frontendmentor.io/solutions/qr-code-component-BvEWmtWmBk",
     live_url: "https://codacad.github.io/qr-code-component/",
     gh_url: "https://github.com/Codacad/qr-code-component",
-    ui_img:"/QR Code Component.jpg",
+    ui_img: "/QR Code Component.jpg",
     created_at: "09 December 2023",
   },
   {
@@ -62,7 +62,7 @@ export const projects = [
     url: "https://www.frontendmentor.io/solutions/order-summary-component-qZJqppKmMx",
     live_url: "https://codacad.github.io/order-summary-component/",
     gh_url: "https://github.com/Codacad/order-summary-component",
-    ui_img:"/Order Summary Component.jpg",
+    ui_img: "/Order Summary Component.jpg",
     created_at: "10 December 2023",
   },
   {
@@ -76,7 +76,7 @@ export const projects = [
     url: "https://www.frontendmentor.io/solutions/product-preview-card-component-with-react-XA6NWcm8iD",
     live_url: "https://codacad.github.io/product-preview-card-component/",
     gh_url: "https://github.com/Codacad/product-preview-card-component",
-    ui_img:"/Product Preview Card Component with React.jpg",
+    ui_img: "/Product Preview Card Component with React.jpg",
     created_at: "29 November 2023",
   },
   {
@@ -91,7 +91,7 @@ export const projects = [
     url: "https://www.frontendmentor.io/solutions/new-home-page-reactjs-css-responsive-design-dNLwzRf0mw",
     live_url: "https://codacad.github.io/news-homepage/",
     gh_url: "https://github.com/Codacad/news-homepage",
-    ui_img:"/New Home Page.jpg",
+    ui_img: "/New Home Page.jpg",
     created_at: "07 October 2023",
   },
   {
@@ -105,7 +105,7 @@ export const projects = [
     url: "https://www.frontendmentor.io/solutions/intro-section-with-dropdown-reactjs-css-javascript-reach-hooks-n3JMrnV2jt",
     live_url: "https://codacad.github.io/Intro-Section-With-Dropdown/",
     gh_url: "https://github.com/Codacad/Intro-Section-With-Dropdown",
-    ui_img:"/Intro Section with Dropdown.jpg",
+    ui_img: "/Intro Section with Dropdown.jpg",
     created_at: "07 October 2023",
   },
   {
@@ -119,7 +119,7 @@ export const projects = [
     url: "https://www.frontendmentor.io/solutions/newsletter-signup-form-with-success-message-dP72UrE_l3",
     live_url: "https://codacad.github.io/newsletter-signup/",
     gh_url: "https://github.com/Codacad/newsletter-signup",
-    ui_img:"/Newsletter Signup Form with Success Message.jpg",
+    ui_img: "/Newsletter Signup Form with Success Message.jpg",
     created_at: "09 July 2023",
   },
   {
@@ -132,7 +132,7 @@ export const projects = [
     url: "https://www.frontendmentor.io/solutions/interactive-rating-component-gltf8Q6MVY",
     live_url: "https://codacad.github.io/rating-component/",
     gh_url: "https://github.com/Codacad/rating-component",
-    ui_img:"/Interactive Rating Component.jpg",
+    ui_img: "/Interactive Rating Component.jpg",
     created_at: "20 July 2023",
   },
   {
@@ -146,7 +146,7 @@ export const projects = [
     url: "https://www.frontendmentor.io/solutions/sunnyside-agency-landing-page-3fQlY2DJlg",
     live_url: "https://codacad.github.io/sunnyside-agency-landing-opage/",
     gh_url: "https://github.com/Codacad/sunnyside-agency-landing-opage",
-    ui_img:"/Sunnyside Agency Landing Page.jpg",
+    ui_img: "/Sunnyside Agency Landing Page.jpg",
     created_at: "01 October 2023",
   },
   {
@@ -160,7 +160,7 @@ export const projects = [
     url: "https://www.frontendmentor.io/solutions/responsive-results-summary-component-aHvCQ51p4V",
     live_url: "https://codacad.github.io/result-summary-component/",
     gh_url: "https://github.com/Codacad/result-summary-component",
-    ui_img:"/Responsive Results Summary Component.jpg",
+    ui_img: "/Responsive Results Summary Component.jpg",
     created_at: "09 July 2023",
   },
   {
@@ -174,7 +174,7 @@ export const projects = [
     url: "https://www.frontendmentor.io/solutions/responsive-landing-page-using-css-grid-and-flexbox-y72T9xYG-",
     live_url: "https://codacad.github.io/frontendmentor-challenge-1/",
     gh_url: "https://github.com/Codacad/frontendmentor-challenge-1",
-    ui_img:"/Responsive landing page using CSS Grid & Flexbox.jpg",
+    ui_img: "/Responsive landing page using CSS Grid & Flexbox.jpg",
     created_at: "12 March 2022",
   },
   {
@@ -201,5 +201,18 @@ export const projects = [
     live_url: "https://codacad.github.io/notifications-page/",
     gh_url: "https://github.com/Codacad/notifications-page",
     created_at: "17 December 2023",
+  },
+  {
+    id: 16,
+    name: "Quran Scholars",
+    level: "Intermediate",
+    suggestedBy: "Client",
+    tech_stack: ["REACTJS, TailwindCSS, NODEJS/EXPRESSJS", "MONGODB"],
+    description: `Islamic Online Education Platform: Empowering Learning in Islamic Studies`,
+    url: "",
+    live_url: "https://www.quranscholar.in",
+    gh_url: "https://github.com/Codacad/quranscholars",
+    ui_img: "/quranscholars.png",
+    created_at: "25 April 2024",
   },
 ];
