@@ -62,10 +62,19 @@ const Project = ({ project }) => {
           </Link>
         </div>
         <div className="flex justify-between">
+          <span className="flex gap-2">
           <span
             className={`max-sm:text-[12px] h-6  border-1 border-yellow-800 bg-yellow-100 text-yellow-800 flex items-center rounded-md p-2`}
           >
             <span>{project.level}</span>
+
+          </span>
+          <span
+            className={`max-sm:text-[12px] h-6  border-1 border-yellow-800 ${project.status == "Completed" ? "bg-green-100 text-green-600 border-green-600" : "bg-yellow-100"} text-yellow-800 flex items-center rounded-md p-2`}
+          >
+            <span>{project.status}</span>
+
+          </span>
           </span>
           <Link
             className="bg-blue-700 ml-auto w-30 flex items-center gap-2 text-center text-white py-[5px] px-4 rounded-3xl text-sm"

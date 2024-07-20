@@ -10,7 +10,9 @@ const difficultyLevels = ["Basic", "Intermediate", "Advance"];
 const sortProjects = (projects, option) => {
   switch (option) {
     case "latest":
-      return [...projects].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+      return [...projects].sort(
+        (a, b) => new Date(b.created_at) - new Date(a.created_at)
+      );
     case "basicToAdvance":
       return [...projects].sort(
         (a, b) =>
@@ -32,11 +34,11 @@ const Projects = () => {
 
   useEffect(() => {
     // Initial sorting of projects when component mounts
-    setProjects(sortProjects(projects, 'latest'));
+    setProjects(sortProjects(projects, "latest"));
   }, []);
 
   const handleSortChange = (event) => {
-    const selectedOption = event.target.value; 
+    const selectedOption = event.target.value;
     setSortOption(selectedOption);
     setProjects(sortProjects(projects, selectedOption));
   };
