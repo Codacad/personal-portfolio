@@ -46,7 +46,7 @@ const Projects = () => {
   return (
     <>
       <div className="bg-[#f4ece6] w-[100%]">
-        <div className="projects relative md:w-[80%] m-auto md:py-8 p-4">
+        <div className="projects bg-[#f4ece6] relative md:w-[80%] m-auto md:py-8 p-4">
           <div className="header mb-8 max-md:mt-4 flex justify-between items-end">
             <div className="heading">
               <h3 className="flex items-center mb-2">
