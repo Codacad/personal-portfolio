@@ -1,31 +1,19 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../css/Navbar.css";
-import { useState, useContext } from "react";
-import MoblieMenuContext from "../context/MobileMenuContext";
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { toggleMobileMenu } from "../state/slices/mobileMenuSlice";
+import { useSelector, useDispatch } from "react-redux";
 const Navbar = () => {
-  let { toggler, setToggler, mobileMenuHandler } =
-    useContext(MoblieMenuContext);
+  const dispatch = useDispatch();
+  const { open } = useSelector((state) => state.mobileMenu);
   let [barOne, setBarOne] = useState("bar bar-one");
   let [barTwo, setBarTwo] = useState("bar bar-two");
   let [barThree, setBarThree] = useState("bar bar-three");
-
-  const handleTogglerChange = () => {
-    setToggler(!toggler);
-    mobileMenuHandler()
-     if (!toggler) {
-      setBarOne("bar bar-one transform-bar-one");
-      setBarTwo("bar bar-two transform-bar-two");
-      setBarThree("bar bar-three transform-bar-three");
-    } else {
-      setBarOne("bar bar-one");
-      setBarTwo("bar bar-two");
-      setBarThree("bar bar-three");
-    }
-  };
+console.log(open)
   return (
     <>
-      <nav className="flex z-10 bg-gray-50 md:p-12 py-8 px-4 items-center justify-between backdrop-blur-sm">
+      <nav className="flex z-10 bg-gray-50 md:p-6 py-4 px-4 items-center justify-between backdrop-blur-sm">
         <div className="brand flex items-center">
           {/* <img src={Logo} alt="" /> */}
           <h1 className="md:text-2xl max-sm:text-sm font-madimi_one font-black flex items-center uppercase">
@@ -38,7 +26,7 @@ const Navbar = () => {
           </span>
         </div>
         <div className="menu-toggler max-md:flex hidden">
-          <div className="bars" onClick={() => handleTogglerChange()}>
+          <div onClick={() =>  dispatch(toggleMobileMenu(!open))} className="bars">
             <span className={`${barOne}`}></span>
             <span className={`${barTwo}`}></span>
             <span className={`${barThree}`}></span>
@@ -51,12 +39,14 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `${
                   isActive
-                  ? "text-blue-600 font-[100] relative after:absolute after:block after:-bottom-4 after:content-[''] after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
-                  : "relative after:absolute after:block after:-bottom-4 after:content-[''] hover:after:transition-width hover:after:ease-in-out hover:after:duration-500 after:w-[0] hover:after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                    ? "text-blue-600 font-[100] relative after:absolute after:block after:-bottom-4 after:content-[''] after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                    : "relative after:absolute after:block after:-bottom-4 after:content-[''] hover:after:transition-width hover:after:ease-in-out hover:after:duration-500 after:w-[0] hover:after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
                 }`
               }
             >
-              <motion.p whileTap={{scale:1}} whileHover={{scale:0.95}}>About Me</motion.p>
+              <motion.p whileTap={{ scale: 1 }} whileHover={{ scale: 0.95 }}>
+                About Me
+              </motion.p>
             </NavLink>
           </li>
           <li>
@@ -65,12 +55,14 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `${
                   isActive
-                  ? "text-blue-600 font-[100] relative after:absolute after:block after:-bottom-4 after:content-[''] after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
-                  : "relative after:absolute after:block after:-bottom-4 after:content-[''] hover:after:transition-width hover:after:ease-in-out hover:after:duration-500 after:w-[0] hover:after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                    ? "text-blue-600 font-[100] relative after:absolute after:block after:-bottom-4 after:content-[''] after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                    : "relative after:absolute after:block after:-bottom-4 after:content-[''] hover:after:transition-width hover:after:ease-in-out hover:after:duration-500 after:w-[0] hover:after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
                 }`
               }
             >
-              <motion.p whileTap={{scale:1}} whileHover={{scale:0.95}}>Resume</motion.p>
+              <motion.p whileTap={{ scale: 1 }} whileHover={{ scale: 0.95 }}>
+                Resume
+              </motion.p>
             </NavLink>
           </li>
           <li>
@@ -84,7 +76,9 @@ const Navbar = () => {
                 }`
               }
             >
-              <motion.p whileTap={{scale:1}} whileHover={{scale:0.95}}>Projects</motion.p>
+              <motion.p whileTap={{ scale: 1 }} whileHover={{ scale: 0.95 }}>
+                Projects
+              </motion.p>
             </NavLink>
           </li>
           <li>
@@ -93,12 +87,14 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `${
                   isActive
-                  ? "text-blue-600 font-[100] relative after:absolute after:block after:-bottom-4 after:content-[''] after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
-                  : "relative after:absolute after:block after:-bottom-4 after:content-[''] hover:after:transition-width hover:after:ease-in-out hover:after:duration-500 after:w-[0] hover:after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                    ? "text-blue-600 font-[100] relative after:absolute after:block after:-bottom-4 after:content-[''] after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
+                    : "relative after:absolute after:block after:-bottom-4 after:content-[''] hover:after:transition-width hover:after:ease-in-out hover:after:duration-500 after:w-[0] hover:after:w-[100%] after:h-[3px] after-rounded-md after:bg-blue-700"
                 }`
               }
             >
-              <motion.p whileTap={{scale:1}} whileHover={{scale:0.95}}>Contact</motion.p>
+              <motion.p whileTap={{ scale: 1 }} whileHover={{ scale: 0.95 }}>
+                Contact
+              </motion.p>
             </NavLink>
           </li>
         </ul>

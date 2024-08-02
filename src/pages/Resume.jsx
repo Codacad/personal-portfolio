@@ -88,7 +88,7 @@ const Resume = () => {
               <div className="title mb-4 flex flex-col">
                 <h1 className="text-xl flex justify-between items-center text-gray-700 font-bold border-l-4 pl-2 border-blue-700">
                   <span>Professional Summary:</span>
-                  <Link to={""} download={""}>
+                  <a href="/cv.pdf" download>
                     <motion.button
                       whileHover={{ scale: 1.025 }}
                       whileTap={{ rotate: "5deg" }}
@@ -97,7 +97,7 @@ const Resume = () => {
                       <FontAwesomeIcon icon={faDownload} className="mr-1" />{" "}
                       <span className="max-md:hidden">Download</span> CV
                     </motion.button>
-                  </Link>
+                  </a>
                 </h1>
                 <span className="mt-4 max-md:mt-1 max-sm:text-sm max-sm:bg-transparent max-sm:text-gray-500 bg-blue-700 w-[170px] max-sm:w-[140px] text-white p-1 box-border text-center">
                   <span>Fullstack Developer</span>

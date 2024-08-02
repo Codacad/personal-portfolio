@@ -75,47 +75,47 @@ const About = () => {
             className="hello flex flex-col gap-6 py-10 px-6 w-[100%] md:w-[60%] items-center md:items-start"
           >
             <motion.h1 className="md:text-8xl flex text-4xl sm:text-6xl font-bold font-madimi_one">
-              <motion.h2
+              <motion.span
                 initial={{ y: "-100%" }}
                 transition={{ duration: 0.2, delay: 0.3 }}
                 animate={{ y: 0 }}
               >
                 H
-              </motion.h2>
-              <motion.h2
+              </motion.span>
+              <motion.span
                 initial={{ y: "-200%" }}
                 transition={{ delay: 0.2, duration: 0.25 }}
                 animate={{ y: 0 }}
               >
                 e
-              </motion.h2>
-              <motion.h2
+              </motion.span>
+              <motion.span
                 initial={{ y: "-300%" }}
                 transition={{ delay: 0.25, duration: 0.3 }}
                 animate={{ y: 0 }}
               >
                 l
-              </motion.h2>
-              <motion.h2
+              </motion.span>
+              <motion.span
                 initial={{ y: "-400%" }}
                 transition={{ delay: 0.3, duration: 0.35 }}
                 animate={{ y: 0 }}
               >
                 l
-              </motion.h2>
-              <motion.h2
+              </motion.span>
+              <motion.span
                 initial={{ y: "-500%" }}
                 transition={{ delay: 0.35, duration: 0.4 }}
                 animate={{ y: 0 }}
               >
                 o
-              </motion.h2>
+              </motion.span>
             </motion.h1>
             <h3 className="md:text-2xl text-xl  font-[600]">
               Here&rsquo;s who I am & what I do
             </h3>
             <div className="actions flex gap-10">
-              <Link to={""}>
+              <Link to={"/resume"}>
                 <motion.button
                   whileHover={{ scale: 0.95 }}
                   whileTap={{ scale: 1.025 }}
@@ -125,7 +125,7 @@ const About = () => {
                   Resume
                 </motion.button>
               </Link>
-              <Link>
+              <Link to={'/projects'}>
                 <motion.button
                   whileHover={{ scale: 0.95 }}
                   whileTap={{ scale: 1.025 }}
@@ -178,13 +178,20 @@ const About = () => {
               className="font-[400] md:text-sm text-[12px]"
               toi={`tel:${507713746}`}
             >
-              +966507713746
+              +966536317438
             </Link>
           </div>
           <div className="write flex flex-col items-center gap-2">
             <h2 className="md:font-[700] font-[500] font-madimi_one">Write</h2>
             <Link
-              className="font-[400] text-[12px] md:text-sm"
+              className="font-[400] text-[12px] md:text-sm hover:underline"
+              to={`mailto:iam@rizwanansari.in`}
+              target="_blank"
+            >
+              iam@rizwanansari.in
+            </Link>
+            <Link
+              className="font-[400] text-[12px] md:text-sm hover:underline"
               to={`mailto:iamrizwan40@gmail.com`}
               target="_blank"
             >

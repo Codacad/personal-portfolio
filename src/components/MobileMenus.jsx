@@ -1,13 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "../css/MobileMenu.css";
-import MoblieMenuContext from "../context/MobileMenuContext";
+import { toggleMobileMenu } from "../state/slices/mobileMenuSlice";
 const MobileMenus = () => {
-  const { setIsOpen, openCloseHandler, mobileMenuClasses } = useContext(MoblieMenuContext);
+  const dispatch = useDispatch();
+  const { open } = useSelector((state) => state.mobileMenu);
   return (
-    <div className={mobileMenuClasses}>
+    <div
+      className={`mobile-menus max-md:block hidden ${
+        open ? "collapse-mobile-menu" : ""
+      }`}
+    >
       <ul className="relative p-8 flex flex-col gap-6 justify-center items-center font-bold text-xl">
-        <li onClick={() => openCloseHandler()}>
+        <li onClick={() => dispatch(toggleMobileMenu(!open))}>
           <NavLink
             to="/"
             className={({ isActive }) => `${isActive ? "text-blue-600" : ""}`}
@@ -15,7 +21,7 @@ const MobileMenus = () => {
             About Me
           </NavLink>
         </li>
-        <li onClick={() => openCloseHandler()}>
+        <li>
           <NavLink
             to="/resume"
             className={({ isActive }) => `${isActive ? "text-blue-600" : ""}`}
@@ -23,7 +29,7 @@ const MobileMenus = () => {
             Resume
           </NavLink>
         </li>
-        <li onClick={() => openCloseHandler()}>
+        <li>
           <NavLink
             to="/projects"
             className={({ isActive }) => `${isActive ? "text-blue-600" : ""}`}
@@ -31,7 +37,7 @@ const MobileMenus = () => {
             Projects
           </NavLink>
         </li>
-        <li onClick={() => openCloseHandler()}>
+        <li>
           <NavLink
             to="/contact"
             className={({ isActive }) => `${isActive ? "text-blue-600" : ""}`}
