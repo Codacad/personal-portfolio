@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MyPic from "../assets/myphoto.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
@@ -33,9 +34,10 @@ const Resume = () => {
   ]);
   return (
     <>
-      <motion.div className="md:w-[80%] w-full bg-white mx-auto resume-container p-12 max-md:p-4 max-sm:p-2 relative">
-        <div className="content min-h-[100vh] p-4 pt-8 relative before:-content-[''] before:absolute before:top-0 before:left-0 before:w-[100px] before:h-[100px] max-md:before:w-[20px] max-md:before:h-[20px] before:border-l-4 max-md:before:border-l-3 max-md:before:border-t-3 before:border-t-4 before:border-blue-700 after:-content-[''] after:absolute after:top-0 after:right-0 after:w-[100px]  max-md:after:w-[20px] after:h-[100px] max-md:after:h-[20px] after:border-r-4 after:border-t-4 max-md:after:border-t-3 max-md:after:border-r-3 after:border-blue-700">
-          <div className="header flex justify-center">
+      <motion.div className="w-full bg-[#f4ece6] flex justify-center mx-auto resume-container p-12 max-md:p-4 max-sm:p-2 relative">
+        <div className="md:w-[80%] content min-h-[100vh] p-4 pt-8 relative before:-content-[''] before:absolute before:top-0 before:left-0 before:w-[100px] before:h-[100px] max-md:before:w-[20px] max-md:before:h-[20px] before:border-l-4 max-md:before:border-l-3 max-md:before:border-t-3 before:border-t-4 before:border-blue-700 after:-content-[''] after:absolute after:top-0 after:right-0 after:w-[100px]  max-md:after:w-[20px] after:h-[100px] max-md:after:h-[20px] after:border-r-4 after:border-t-4 max-md:after:border-t-3 max-md:after:border-r-3 after:border-blue-700">
+          <div className="header flex justify-center flex-col items-center gap-4">
+            <img className="w-12 h-12 rounded-full ring-2 ring-blue-700 object-cover object-center" src={MyPic} alt="" />
             <h1 className="text-4xl max-md:text-2xl relative text-gray-700 flex font-bold items-center uppercase after:content-[''] after:absolute after:-bottom-4 after:w-[100%] after:bg-blue-700">
               {/* <span className="w-[28px] h-[28px] mt-1 bg-blue-700 mr-2 block"></span> */}
               <span>Mohd Rizwan</span>

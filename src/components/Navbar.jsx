@@ -10,7 +10,7 @@ const Navbar = () => {
   let [barOne, setBarOne] = useState("bar bar-one");
   let [barTwo, setBarTwo] = useState("bar bar-two");
   let [barThree, setBarThree] = useState("bar bar-three");
-console.log(open)
+  console.log(open);
   return (
     <>
       <nav className="flex z-10 bg-gray-50 md:p-6 py-4 px-4 items-center justify-between backdrop-blur-sm">
@@ -26,7 +26,10 @@ console.log(open)
           </span>
         </div>
         <div className="menu-toggler max-md:flex hidden">
-          <div onClick={() =>  dispatch(toggleMobileMenu(!open))} className="bars">
+          <div
+            onClick={() => dispatch(toggleMobileMenu())}
+            className="bars"
+          >
             <span className={`${barOne}`}></span>
             <span className={`${barTwo}`}></span>
             <span className={`${barThree}`}></span>

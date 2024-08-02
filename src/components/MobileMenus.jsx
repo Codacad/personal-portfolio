@@ -21,7 +21,7 @@ const MobileMenus = () => {
             About Me
           </NavLink>
         </li>
-        <li>
+        <li onClick={() => dispatch(toggleMobileMenu(!open))}>
           <NavLink
             to="/resume"
             className={({ isActive }) => `${isActive ? "text-blue-600" : ""}`}
@@ -29,7 +29,7 @@ const MobileMenus = () => {
             Resume
           </NavLink>
         </li>
-        <li>
+        <li onClick={() => dispatch(toggleMobileMenu(!open))}>
           <NavLink
             to="/projects"
             className={({ isActive }) => `${isActive ? "text-blue-600" : ""}`}
@@ -37,7 +37,7 @@ const MobileMenus = () => {
             Projects
           </NavLink>
         </li>
-        <li>
+        <li onClick={() => dispatch(toggleMobileMenu(!open))}>
           <NavLink
             to="/contact"
             className={({ isActive }) => `${isActive ? "text-blue-600" : ""}`}

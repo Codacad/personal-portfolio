@@ -45,8 +45,8 @@ const Projects = () => {
 
   return (
     <>
-      <div className="bg-gray-100 w-[100%]">
-        <div className="projects bg-gray-100 relative md:w-[80%] m-auto md:py-8 p-4">
+      <div className="bg-[#f4ece6] w-[100%]">
+        <div className="projects relative md:w-[80%] m-auto md:py-8 p-4">
           <div className="header mb-8 max-md:mt-4 flex justify-between items-end">
             <div className="heading">
               <h3 className="flex items-center mb-2">
@@ -60,7 +60,7 @@ const Projects = () => {
                 <span className="">Projects</span>
               </h1>
             </div>
-            <div className="view-all ring-blue-700 ring-1 shadow-xl bg-transparent rounded-3xl flex gap-2 pl-[5px] items-center">
+            <div className="view-all invisible ring-blue-700 ring-1 shadow-xl bg-transparent rounded-3xl flex gap-2 pl-[5px] items-center">
               <span className="p-2 w-8 h-8 max-sm:w-6 max-sm:h-6 max-sm:p-[5px] flex justify-center items-center bg-blue-700 rounded-full text-white">
                 <FontAwesomeIcon
                   className="max-sm:text-[10px]"
