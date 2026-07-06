@@ -1,27 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { projectData } from "../utils/projects";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "motion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHandPointRight } from "@fortawesome/free-regular-svg-icons";
+import {
+  faArrowRight,
+  faFilter,
+  faLayerGroup,
+  faSort,
+} from "@fortawesome/free-solid-svg-icons";
 import Project from "../components/Project";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { projectData } from "../utils/projects";
 
 const difficultyLevels = ["Basic", "Intermediate", "Advance"];
+const filters = ["All", "Client", "Self Suggested", "Frontend Mentor"];
+
 const sortProjects = (projects, option) => {
   switch (option) {
     case "latest":
       return [...projects].sort(
-        (a, b) => new Date(b.created_at) - new Date(a.created_at)
+        (a, b) => new Date(b.created_at) - new Date(a.created_at),
       );
     case "basicToAdvance":
       return [...projects].sort(
         (a, b) =>
-          difficultyLevels.indexOf(a.level) - difficultyLevels.indexOf(b.level)
+          difficultyLevels.indexOf(a.level) - difficultyLevels.indexOf(b.level),
       );
     case "advanceToBasic":
       return [...projects].sort(
         (a, b) =>
-          difficultyLevels.indexOf(b.level) - difficultyLevels.indexOf(a.level)
+          difficultyLevels.indexOf(b.level) - difficultyLevels.indexOf(a.level),
       );
     default:
       return projects;
@@ -29,75 +36,107 @@ const sortProjects = (projects, option) => {
 };
 
 const Projects = () => {
-  const [projects, setProjects] = useState(projectData);
+  const [filter, setFilter] = useState("All");
   const [sortOption, setSortOption] = useState("latest");
 
-  useEffect(() => {
-    // Initial sorting of projects when component mounts
-    setProjects(sortProjects(projects, "latest"));
-  }, []);
+  const projects = useMemo(() => {
+    const filtered =
+      filter === "All"
+        ? projectData
+        : projectData.filter((project) => project.suggestedBy === filter);
 
-  const handleSortChange = (event) => {
-    const selectedOption = event.target.value;
-    setSortOption(selectedOption);
-    setProjects(sortProjects(projects, selectedOption));
-  };
+    return sortProjects(filtered, sortOption);
+  }, [filter, sortOption]);
+
+  const featuredProjects = projectData.filter((project) =>
+    [
+      "Quran Scholars",
+      "Nujum Al Miad Contracting Est. (NMC)",
+      "Interactive Quiz App",
+    ].includes(project.name),
+  );
 
   return (
-    <>
-      <div className="bg-[#f4ece6] w-[100%]">
-        <div className="projects bg-[#f4ece6] relative md:w-[80%] m-auto md:py-8 p-4">
-          <div className="header mb-8 max-md:mt-4 flex justify-between items-end">
-            <div className="heading">
-              <h3 className="flex items-center mb-2">
-                <span className="md:w-4 w-2 h-[2px] bg-blue-700 md:mr-2 mr-[5px]"></span>
-                <span className="md:text-xl text-[12px] text-gray-500">
-                  Projects
-                </span>
-              </h3>
-              <h1 className="md:text-4xl text-xl text-blue-700 font-[600]">
-                My <span className="">Latest</span>{" "}
-                <span className="">Projects</span>
-              </h1>
-            </div>
-            <div className="view-all invisible ring-blue-700 ring-1 shadow-xl bg-transparent rounded-3xl flex gap-2 pl-[5px] items-center">
-              <span className="p-2 w-8 h-8 max-sm:w-6 max-sm:h-6 max-sm:p-[5px] flex justify-center items-center bg-blue-700 rounded-full text-white">
-                <FontAwesomeIcon
-                  className="max-sm:text-[10px]"
-                  icon={faHandPointRight}
-                />
-              </span>
-              <Link
-                className="bg-blue-700 text-white py-[10px] max-sm:py-[5px] px-4 rounded-3xl text-sm max-sm:text-[10px]"
-                to={"/projects"}
+    <div className="page">
+      <section className="grid gap-8 pt-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="space-y-4"
+        >
+          <div className="section-eyebrow">Selected Work</div>
+          <h1 className="text-5xl font-black leading-tight text-slate-950 sm:text-6xl">
+            Projects with real screens, real links, and real learning.
+          </h1>
+        </motion.div>
+        <div className="glass-panel rounded-3xl p-6">
+          <p className="leading-8 text-slate-600">
+            This collection mixes client work, self-built MERN projects, and
+            Frontend Mentor challenges. The focus is simple: build clean UIs,
+            ship working features, and keep improving the craft.
+          </p>
+          <Link className="primary-button mt-6 w-fit" to="/contact">
+            Discuss a Build <FontAwesomeIcon icon={faArrowRight} />
+          </Link>
+        </div>
+      </section>
+
+      <section className="section-gap">
+        <div className="mb-6 flex items-center gap-3">
+          <FontAwesomeIcon className="text-blue-600" icon={faLayerGroup} />
+          <h2 className="text-2xl font-black text-slate-950">Featured Builds</h2>
+        </div>
+        <div className="grid gap-5 lg:grid-cols-3">
+          {featuredProjects.map((project) => (
+            <Project key={project.id} project={project} />
+          ))}
+        </div>
+      </section>
+
+      <section className="section-gap">
+        <div className="glass-panel mb-6 flex flex-col gap-4 rounded-3xl p-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-wrap gap-2">
+            <span className="flex items-center gap-2 px-2 text-sm font-black text-slate-500">
+              <FontAwesomeIcon icon={faFilter} />
+              Filter
+            </span>
+            {filters.map((item) => (
+              <button
+                key={item}
+                type="button"
+                onClick={() => setFilter(item)}
+                className={`rounded-full px-4 py-2 text-sm font-black transition ${
+                  filter === item
+                    ? "bg-blue-600 text-white"
+                    : "bg-white/70 text-slate-600 hover:bg-blue-50 hover:text-blue-700"
+                }`}
               >
-                View All Projects
-              </Link>
-            </div>
-          </div>
-          <div className="sort relative flex justify-end mb-8">
-            <select
-              value={sortOption}
-              onChange={handleSortChange}
-              className="border border-gray-300 rounded-md focus:ring-1 focus:ring-gray-800 appearance-none w-[200px] outline-none text-gray-600 text-[18px] bg-gray-100 py-1 px-4"
-            >
-              <option value="latest">Latest</option>
-              <option value="basicToAdvance">Basic To Advance</option>
-              <option value="advanceToBasic">Advance to Basic</option>
-            </select>
-            <div className="icon absolute right-6 top-2">
-              <span>
-                <FontAwesomeIcon className="text-gray-600" icon={faCaretDown} />
-              </span>
-            </div>
+                {item}
+              </button>
+            ))}
           </div>
 
+          <label className="relative flex items-center gap-3 rounded-full bg-white/70 px-4 py-2 text-sm font-black text-slate-600">
+            <FontAwesomeIcon icon={faSort} />
+            <select
+              value={sortOption}
+              onChange={(event) => setSortOption(event.target.value)}
+              className="bg-transparent outline-none"
+            >
+              <option value="latest">Latest first</option>
+              <option value="basicToAdvance">Basic to advanced</option>
+              <option value="advanceToBasic">Advanced to basic</option>
+            </select>
+          </label>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
             <Project key={project.id} project={project} />
           ))}
         </div>
-      </div>
-    </>
+      </section>
+    </div>
   );
 };
 
