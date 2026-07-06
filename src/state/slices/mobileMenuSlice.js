@@ -7,10 +7,13 @@ const mobileMenuSlice = createSlice({
   },
   reducers: {
     toggleMobileMenu(state) {
-      state.open = !state.open
+      state.open = !state.open;
+    },
+    closeMobileMenu(state) {
+      state.open = false;
     },
   },
 });
 
-export const { toggleMobileMenu } = mobileMenuSlice.actions;
+export const { closeMobileMenu, toggleMobileMenu } = mobileMenuSlice.actions;
 export default mobileMenuSlice.reducer;

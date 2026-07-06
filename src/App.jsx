@@ -1,3 +1,4 @@
+
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
@@ -9,16 +10,18 @@ import MobileMenus from "./components/MobileMenus";
 
 function App() {
   return (
-    <>
+    <div className="site-shell">
       <Navbar />
       <MobileMenus />
-      <Routes>
-        <Route path="/" element={<About />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </>
+      <main>
+        <Routes>
+          <Route path="/" element={<About />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+    </div>
   );
 }
 
