@@ -6,11 +6,13 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Resume from "./pages/Resume";
+import MobileMenus from "./components/MobileMenus";
 
 function App() {
   return (
     <div className="site-shell">
       <Navbar />
+      <MobileMenus />
       <main>
         <Routes>
           <Route path="/" element={<About />} />

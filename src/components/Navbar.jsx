@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBarsStaggered, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { closeMobileMenu, toggleMobileMenu } from "../state/slices/mobileMenuSlice";
 
 const navItems = [
   { label: "About", path: "/" },
@@ -11,7 +13,8 @@ const navItems = [
 ];
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
+  const { open } = useSelector((state) => state.mobileMenu);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -30,7 +33,11 @@ const Navbar = () => {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/50 bg-white/70 backdrop-blur-2xl">
       <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%_-_32px))] items-center justify-between">
-        <NavLink to="/" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
+        <NavLink
+          to="/"
+          className="group flex items-center gap-3"
+          onClick={() => dispatch(closeMobileMenu())}
+        >
           <span className="grid h-11 w-11 place-items-center rounded-2xl bg-slate-950 text-sm font-black text-white shadow-lg shadow-slate-900/15">
             MR
           </span>
@@ -62,35 +69,12 @@ const Navbar = () => {
           className="icon-button md:hidden"
           type="button"
           aria-label={open ? "Close navigation" : "Open navigation"}
-          onClick={() => setOpen((current) => !current)}
+          aria-expanded={open}
+          onClick={() => dispatch(toggleMobileMenu())}
         >
           <FontAwesomeIcon icon={open ? faXmark : faBarsStaggered} />
         </button>
       </nav>
-
-      <div
-        className={`md:hidden ${
-          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-        } fixed inset-x-3 top-24 rounded-3xl border border-slate-200 bg-white/95 p-3 shadow-2xl shadow-slate-900/15 transition`}
-      >
-        {navItems.map((item) => (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            className={({ isActive }) =>
-              `mb-1 flex rounded-2xl px-4 py-4 text-base font-bold ${
-                isActive ? "bg-blue-50 text-blue-700" : "text-slate-700"
-              }`
-            }
-            onClick={() => setOpen(false)}
-          >
-            {item.label}
-          </NavLink>
-        ))}
-        <a className="primary-button mt-2 w-full" href="mailto:iam@rizwanansari.in">
-          Start a Project
-        </a>
-      </div>
     </header>
   );
 };

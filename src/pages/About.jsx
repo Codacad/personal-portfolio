@@ -13,6 +13,7 @@ import {
   faCode,
   faDatabase,
   faLayerGroup,
+  faLocationDot,
   faRocket,
   faShieldHalved,
 } from "@fortawesome/free-solid-svg-icons";
@@ -53,7 +54,7 @@ const stack = [
 ];
 
 const stats = [
-  { value: "5+", label: "Years building" },
+  { value: "7+", label: "Years building" },
   { value: "17", label: "Featured projects" },
   { value: "MERN", label: "Core stack" },
 ];
@@ -68,7 +69,7 @@ const About = () => {
           transition={{ duration: 0.55 }}
           className="space-y-8"
         >
-          <div className="section-eyebrow">Portfolio v2</div>
+          <div className="section-eyebrow">Portfolio</div>
           <div className="space-y-5">
             <h1 className="max-w-4xl text-5xl font-black leading-tight text-slate-950 sm:text-6xl lg:text-7xl">
               I build useful web products with{" "}
@@ -105,14 +106,14 @@ const About = () => {
           </div>
         </motion.div>
 
-        <motion.div
+        <motion.aside
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.65, delay: 0.1 }}
-          className="glass-panel noise-panel rounded-[2rem] p-4 sm:p-6"
+          className="glass-panel noise-panel mx-auto w-full max-w-[620px] rounded-[2rem] p-3 sm:p-5 lg:mx-0"
         >
-          <div className="relative z-10 overflow-hidden rounded-[1.5rem] bg-slate-950 p-4 text-white sm:p-6">
-            <div className="flex items-center justify-between gap-4">
+          <div className="relative z-10 overflow-hidden rounded-[1.5rem] bg-slate-950 text-white">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 px-4 py-4 sm:px-5">
               <div className="flex items-center gap-2">
                 <span className="h-3 w-3 rounded-full bg-red-400"></span>
                 <span className="h-3 w-3 rounded-full bg-amber-300"></span>
@@ -123,32 +124,59 @@ const About = () => {
               </span>
             </div>
 
-            <div className="mt-8 grid gap-5 sm:grid-cols-[0.82fr_1.18fr]">
-              <img
-                src={MyPic}
-                alt="Mohd Rizwan"
-                className="h-72 w-full rounded-3xl object-cover object-top sm:h-full"
-              />
-              <div className="flex min-h-[320px] flex-col justify-between rounded-3xl border border-white/10 bg-white/5 p-5">
+            <div className="grid gap-0 md:grid-cols-[0.9fr_1.1fr]">
+              <div className="relative min-h-[320px] md:min-h-[460px]">
+                <img
+                  src={MyPic}
+                  alt="Mohd Rizwan"
+                  className="absolute inset-0 h-full w-full object-cover object-top"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-transparent p-5">
+                  <span className="inline-flex items-center rounded-full bg-emerald-400 px-3 py-1 text-xs font-black text-emerald-950">
+                    Open to work
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex min-h-[360px] flex-col justify-between p-5 sm:p-6">
                 <div>
                   <p className="text-sm text-slate-400">const developer =</p>
-                  <h2 className="mt-2 text-3xl font-black">Mohd Rizwan</h2>
+                  <h2 className="mt-2 text-3xl font-black leading-tight sm:text-4xl">
+                    Mohd Rizwan
+                  </h2>
                   <p className="mt-4 leading-7 text-slate-300">
                     MERN stack developer turning ideas into clean, responsive,
                     production-ready web experiences.
                   </p>
                 </div>
-                <div className="mt-8 flex flex-wrap gap-2">
-                  {stack.slice(0, 6).map((item) => (
-                    <span key={item} className="rounded-full bg-white/10 px-3 py-2 text-xs font-bold">
-                      {item}
-                    </span>
-                  ))}
+
+                <div className="mt-8 space-y-5">
+                  <div className="grid gap-3 text-sm">
+                    <div className="flex items-center gap-3 rounded-2xl bg-white/7 px-4 py-3">
+                      <FontAwesomeIcon className="text-blue-300" icon={faLocationDot} />
+                      <span>Saudi Arabia / Remote</span>
+                    </div>
+                    <div className="flex items-center gap-3 rounded-2xl bg-white/7 px-4 py-3">
+                      <FontAwesomeIcon className="text-blue-300" icon={faRocket} />
+                      <span>Frontend, backend, APIs, deployment</span>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {stack.slice(0, 6).map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full bg-white/10 px-3 py-2 text-xs font-bold"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.aside>
       </section>
 
       <section className="section-gap">

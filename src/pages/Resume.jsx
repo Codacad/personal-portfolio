@@ -5,9 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faDev, faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faBriefcase,
+  faCloud,
+  faCodeBranch,
   faDownload,
   faGraduationCap,
+  faKey,
   faLocationDot,
+  faServer,
 } from "@fortawesome/free-solid-svg-icons";
 
 const frontendSkillList = [
@@ -22,11 +26,37 @@ const backendSkillList = [
   { skill: "NodeJS", frequency: 78 },
   { skill: "Express", frequency: 82 },
   { skill: "MongoDB", frequency: 72 },
+  { skill: "Redis", frequency: 58 },
   { skill: "RESTful APIs", frequency: 80 },
+  { skill: "JWT Auth", frequency: 74 },
   { skill: "Deployment", frequency: 76 },
 ];
 
+const cloudWorkflowSkillList = [
+  { skill: "AWS SAA-C03", frequency: 52 },
+  { skill: "EC2 Instances", frequency: 64 },
+  { skill: "Monorepo Structure", frequency: 68 },
+  { skill: "PNPM Workspaces", frequency: 62 },
+  { skill: "CI/CD", frequency: 60 },
+];
+
+const profileFocus = [
+  { label: "Learning", value: "AWS SAA-C03", icon: faCloud },
+  { label: "Cloud", value: "EC2 instances", icon: faServer },
+  { label: "Architecture", value: "Monorepos", icon: faCodeBranch },
+  { label: "Auth", value: "JWT flows", icon: faKey },
+];
+
 const timeline = [
+  {
+    type: "Cloud Learning",
+    icon: faCloud,
+    period: "2026",
+    title: "AWS Solutions Architect Associate Preparation",
+    subtitle: "AWS SAA-C03 course",
+    detail:
+      "Currently building cloud fundamentals with hands-on learning around EC2 instances, core AWS services, deployment thinking, and architecture patterns.",
+  },
   {
     type: "Experience",
     icon: faBriefcase,
@@ -130,6 +160,43 @@ const Resume = () => {
             <FontAwesomeIcon icon={faDownload} />
             Download CV
           </a>
+
+          <div className="mt-6 rounded-3xl border border-slate-200/70 bg-white/70 p-4">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-600">
+              Current Growth
+            </p>
+            <h2 className="mt-2 text-lg font-black text-slate-950">
+              Cloud, architecture, and delivery tools
+            </h2>
+            <div className="mt-4 grid gap-3">
+              {profileFocus.map((item) => (
+                <div key={item.value} className="flex items-center gap-3 rounded-2xl bg-slate-50 p-3">
+                  <span className="grid h-10 w-10 place-items-center rounded-2xl bg-blue-50 text-blue-700">
+                    <FontAwesomeIcon icon={item.icon} />
+                  </span>
+                  <span>
+                    <span className="block text-xs font-bold text-slate-400">
+                      {item.label}
+                    </span>
+                    <strong className="block text-sm text-slate-800">{item.value}</strong>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-4 rounded-3xl bg-slate-950 p-4 text-white">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-300">
+              Also Working With
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {["Redis", "PNPM", "JWT", "CI/CD", "Monorepo"].map((tool) => (
+                <span key={tool} className="rounded-full bg-white/10 px-3 py-2 text-xs font-black">
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
         </aside>
 
         <div className="space-y-8">
@@ -141,11 +208,12 @@ const Resume = () => {
             <p className="mt-5 leading-8 text-slate-600">
               Experienced frontend and fullstack developer with hands-on work in
               React, JavaScript, Node.js, Express, MongoDB, Tailwind CSS, Git,
-              responsive design, authentication, REST APIs, and deployment.
+              responsive design, authentication, REST APIs, Redis, JWT, CI/CD,
+              PNPM workflows, monorepo structures, and AWS fundamentals.
             </p>
           </section>
 
-          <section className="grid gap-5 lg:grid-cols-2">
+          <section className="grid gap-5 xl:grid-cols-3">
             <div className="glass-panel rounded-3xl p-6">
               <h3 className="mb-6 text-2xl font-black text-slate-950">Frontend</h3>
               <div className="space-y-5">
@@ -158,6 +226,16 @@ const Resume = () => {
               <h3 className="mb-6 text-2xl font-black text-slate-950">Backend</h3>
               <div className="space-y-5">
                 {backendSkillList.map((item) => (
+                  <SkillBar key={item.skill} item={item} />
+                ))}
+              </div>
+            </div>
+            <div className="glass-panel rounded-3xl p-6">
+              <h3 className="mb-6 text-2xl font-black text-slate-950">
+                Cloud & Workflow
+              </h3>
+              <div className="space-y-5">
+                {cloudWorkflowSkillList.map((item) => (
                   <SkillBar key={item.skill} item={item} />
                 ))}
               </div>
